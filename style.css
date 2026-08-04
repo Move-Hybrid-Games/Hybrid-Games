@@ -1,0 +1,594 @@
+/*==================================================
+ MOVE HYBRID GAMES
+ Author: WareIQ Consulting
+ Version: 1.0
+==================================================*/
+
+:root{
+
+    --primary:#071C3B;
+    --primary-light:#0F2E5F;
+    --secondary:#FFFFFF;
+    --gray:#CFCFCF;
+    --dark:#050B17;
+    --black:#000000;
+
+    --transition:.35s ease;
+
+    --radius:8px;
+
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/*=========================
+RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--dark);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+/*=========================
+HEADER
+=========================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    transition:.4s;
+
+    padding:25px 0;
+
+}
+
+.header.active{
+
+    background:rgba(7,28,59,.95);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.45);
+
+}
+
+.nav-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    width:120px;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+.navbar a{
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:#67b5ff;
+
+}
+
+.btn-register{
+
+    padding:14px 32px;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#071C3B;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.btn-register:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(255,255,255,.25);
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+/*=========================
+HERO
+=========================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+.hero-video{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(rgba(5,11,23,.70),rgba(5,11,23,.88));
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+
+    max-width:1000px;
+
+}
+
+.hero-logo{
+
+    width:190px;
+
+    margin:auto;
+
+    margin-bottom:30px;
+
+}
+
+.hero h2{
+
+    color:#67b5ff;
+
+    letter-spacing:8px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:110px;
+
+    line-height:1;
+
+    letter-spacing:4px;
+
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:#dddddd;
+
+}
+
+/*=========================
+BUTTONS
+=========================*/
+
+.hero-buttons{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+    background:#FFFFFF;
+
+    color:#071C3B;
+
+    padding:18px 40px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 45px rgba(255,255,255,.35);
+
+}
+
+.secondary-btn{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:18px 40px;
+
+    border-radius:40px;
+
+    transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:#071C3B;
+
+}
+
+/*=========================
+COUNTDOWN
+=========================*/
+
+.countdown{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.countdown div{
+
+    min-width:120px;
+
+}
+
+.countdown span{
+
+    display:block;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.countdown small{
+
+    font-size:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:#8fbef5;
+
+}
+
+/*=========================
+SCROLL
+=========================*/
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:3;
+
+    animation:bounce 2s infinite;
+
+    font-size:28px;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,10px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+
+/*=========================
+ABOUT
+=========================*/
+
+.about{
+
+    padding:120px 0;
+
+    background:#071C3B;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+    font-family:'Bebas Neue';
+
+    font-size:60px;
+
+    letter-spacing:2px;
+
+}
+
+.section-title span{
+
+    display:block;
+
+    width:120px;
+
+    height:5px;
+
+    background:#67b5ff;
+
+    margin:15px auto;
+
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.about-image img{
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.about-text h3{
+
+    font-size:38px;
+
+    margin-bottom:25px;
+
+}
+
+.about-text p{
+
+    color:#d6d6d6;
+
+    margin-bottom:25px;
+
+    line-height:1.9;
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+    .navbar{
+
+        display:none;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .hero h1{
+
+        font-size:75px;
+
+    }
+
+    .hero h2{
+
+        font-size:16px;
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:55px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .countdown span{
+
+        font-size:45px;
+
+    }
+
+    .section-title h2{
+
+        font-size:42px;
+
+    }
+
+}
