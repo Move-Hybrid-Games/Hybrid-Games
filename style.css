@@ -1750,6 +1750,11 @@ footer {
         text-align:
             center;
     }
+.brand-logo {
+    width: 43px;
+    height: 43px;
+}
+   
 }
 
 
@@ -1857,4 +1862,39 @@ footer {
 .demo-section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================================
+   LOGO REAL MOVE
+========================================================= */
+
+.brand-logo {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(22, 213, 244, 0.18)
+        );
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+.brand:hover .brand-logo {
+    transform:
+        scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(22, 213, 244, 0.40)
+        );
 }
