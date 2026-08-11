@@ -1,257 +1,567 @@
-/*==================================================
-MOVE HYBRID GAMES
-Author: WareIQ Consulting
-Version: 1.0
-==================================================*/
-
-/*==============================
-NAVBAR SCROLL
-==============================*/
-
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 80){
-
-        header.classList.add("active");
-
-    }else{
-
-        header.classList.remove("active");
-
-    }
-
-});
+/* =========================================================
+   MOVE HYBRID GAMES
+   SCRIPT.JS
+========================================================= */
 
 
-/*==============================
-COUNTDOWN
-==============================*/
+/* =========================================================
+   CUENTA REGRESIVA
+========================================================= */
 
-// Cambia esta fecha por la de tu evento
+/*
+   Fecha del próximo evento:
 
-const eventDate = new Date("October 24, 2026 08:00:00").getTime();
+   03 DE OCTUBRE DE 2026
 
-const days = document.getElementById("days");
-const hours = document.getElementById("hours");
-const minutes = document.getElementById("minutes");
-const seconds = document.getElementById("seconds");
+   Formato:
+   YYYY-MM-DDTHH:mm:ss
+*/
 
-function countdown(){
+const eventDate = new Date("2026-10-03T00:00:00");
 
-    const now = new Date().getTime();
 
-    const distance = eventDate - now;
+/*
+   Elementos HTML donde mostraremos
+   la cuenta regresiva.
+*/
 
-    if(distance < 0){
+const daysElement =
+    document.getElementById("days");
 
-        days.innerHTML = "00";
-        hours.innerHTML = "00";
-        minutes.innerHTML = "00";
-        seconds.innerHTML = "00";
+const hoursElement =
+    document.getElementById("hours");
+
+const minutesElement =
+    document.getElementById("minutes");
+
+const secondsElement =
+    document.getElementById("seconds");
+
+
+/*
+   Agrega un 0 delante de números
+   menores a 10.
+
+   Ejemplo:
+
+   7  → 07
+   25 → 25
+*/
+
+function pad(value) {
+
+    return String(value).padStart(2, "0");
+
+}
+
+
+/*
+   Actualizar cuenta regresiva
+*/
+
+function updateCountdown() {
+
+    const now = new Date();
+
+    const difference =
+        eventDate.getTime() -
+        now.getTime();
+
+
+    /*
+       Si la fecha ya llegó,
+       ponemos todo en cero.
+    */
+
+    if (difference <= 0) {
+
+        daysElement.textContent = "00";
+
+        hoursElement.textContent = "00";
+
+        minutesElement.textContent = "00";
+
+        secondsElement.textContent = "00";
 
         return;
 
     }
 
-    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    /*
+       Convertimos los milisegundos
+       restantes.
+    */
 
-    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
 
-    const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    days.innerHTML = d.toString().padStart(2,"0");
-    hours.innerHTML = h.toString().padStart(2,"0");
-    minutes.innerHTML = m.toString().padStart(2,"0");
-    seconds.innerHTML = s.toString().padStart(2,"0");
+    const hours =
+        Math.floor(
+            (difference /
+                (1000 * 60 * 60))
+            % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+                (1000 * 60))
+            % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference /
+                1000)
+            % 60
+        );
+
+
+    /*
+       Mostramos los valores.
+    */
+
+    daysElement.textContent =
+        pad(days);
+
+    hoursElement.textContent =
+        pad(hours);
+
+    minutesElement.textContent =
+        pad(minutes);
+
+    secondsElement.textContent =
+        pad(seconds);
 
 }
 
-setInterval(countdown,1000);
 
-countdown();
+/*
+   Ejecutamos inmediatamente
+   para que no aparezca 00 al cargar.
+*/
 
-
-/*==============================
-SMOOTH SCROLL
-==============================*/
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-    anchor.addEventListener("click",function(e){
-
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    });
-
-});
+updateCountdown();
 
 
-/*==============================
-MOBILE MENU
-==============================*/
+/*
+   Actualizamos cada segundo.
+*/
 
-const menu = document.querySelector(".navbar");
-
-const menuBtn = document.querySelector(".menu-toggle");
-
-menuBtn.addEventListener("click",()=>{
-
-    menu.classList.toggle("show");
-
-});
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
-/*==============================
-CLOSE MENU AFTER CLICK
-==============================*/
 
-document.querySelectorAll(".navbar a").forEach(item=>{
-
-    item.addEventListener("click",()=>{
-
-        menu.classList.remove("show");
-
-    });
-
-});
+/* =========================================================
+   MENÚ MOBILE
+========================================================= */
 
 
-/*==============================
-SCROLL ANIMATION
-==============================*/
+/*
+   Elementos del menú.
+*/
 
-const observer = new IntersectionObserver(entries=>{
+const menuToggle =
+    document.querySelector(
+        ".menu-toggle"
+    );
 
-    entries.forEach(entry=>{
 
-        if(entry.isIntersecting){
+const mainNav =
+    document.querySelector(
+        ".main-nav"
+    );
 
-            entry.target.classList.add("visible");
+
+/*
+   Abrir / cerrar menú.
+*/
+
+if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener(
+        "click",
+        () => {
+
+            const isOpen =
+                mainNav.classList.toggle(
+                    "open"
+                );
+
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
         }
+    );
 
-    });
-
-},{
-    threshold:.2
-});
-
-document.querySelectorAll("section").forEach(section=>{
-
-    observer.observe(section);
-
-});
+}
 
 
-/*==============================
-PARALLAX HERO
-==============================*/
 
-window.addEventListener("mousemove",(e)=>{
+/* =========================================================
+   CERRAR MENÚ AL HACER CLICK
+========================================================= */
 
-    const hero=document.querySelector(".hero");
-
-    const x=(window.innerWidth/2-e.pageX)/60;
-
-    const y=(window.innerHeight/2-e.pageY)/60;
-
-    hero.style.backgroundPosition=`${x}px ${y}px`;
-
-});
+const navigationLinks =
+    document.querySelectorAll(
+        ".nav-link"
+    );
 
 
-/*==============================
-BUTTON HOVER EFFECT
-==============================*/
+navigationLinks.forEach(
+    link => {
 
-const buttons=document.querySelectorAll(".primary-btn,.secondary-btn,.btn-register");
+        link.addEventListener(
+            "click",
+            () => {
 
-buttons.forEach(btn=>{
-
-    btn.addEventListener("mouseenter",()=>{
-
-        btn.style.transform="translateY(-5px) scale(1.03)";
-
-    });
-
-    btn.addEventListener("mouseleave",()=>{
-
-        btn.style.transform="translateY(0) scale(1)";
-
-    });
-
-});
+                if (!mainNav) return;
 
 
-/*==============================
-PRELOADER
-==============================*/
-
-window.addEventListener("load",()=>{
-
-    document.body.classList.add("loaded");
-
-});
+                mainNav.classList.remove(
+                    "open"
+                );
 
 
-/*==============================
-BACK TO TOP BUTTON
-==============================*/
+                if (menuToggle) {
 
-const topButton=document.createElement("button");
+                    menuToggle.classList.remove(
+                        "active"
+                    );
 
-topButton.innerHTML='<i class="fa-solid fa-arrow-up"></i>';
 
-topButton.className="top-btn";
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-document.body.appendChild(topButton);
+                }
 
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>600){
-
-        topButton.classList.add("show");
-
-    }else{
-
-        topButton.classList.remove("show");
+            }
+        );
 
     }
-
-});
-
-topButton.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
+);
 
 
-/*==============================
-CONSOLE MESSAGE
-==============================*/
 
-console.log("%cMove Hybrid Games","font-size:28px;color:#67b5ff;font-weight:bold;");
-console.log("%cDeveloped by WareIQ Consulting","font-size:15px;color:white;");
+/* =========================================================
+   NAVBAR — SECCIÓN ACTIVA
+========================================================= */
+
+
+/*
+   Detectamos las secciones
+   principales de la página.
+*/
+
+const sections =
+    document.querySelectorAll(
+        "main section[id]"
+    );
+
+
+/*
+   Todos los links del navbar.
+*/
+
+const navLinks =
+    document.querySelectorAll(
+        ".nav-link"
+    );
+
+
+/*
+   IntersectionObserver permite detectar
+   qué sección está visible.
+*/
+
+const sectionObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                       Quitamos "active"
+                       de todos.
+                    */
+
+                    navLinks.forEach(
+                        link => {
+
+                            link.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    /*
+                       Buscamos el link
+                       correspondiente
+                       a la sección.
+                    */
+
+                    const activeLink =
+                        document.querySelector(
+                            `.nav-link[href="#${entry.target.id}"]`
+                        );
+
+
+                    /*
+                       Activamos el link.
+                    */
+
+                    if (activeLink) {
+
+                        activeLink.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+
+            /*
+               La sección se considera
+               activa cuando entra
+               en esta zona de la pantalla.
+            */
+
+            rootMargin:
+                "-35% 0px -55% 0px",
+
+            threshold: 0
+
+        }
+    );
+
+
+/*
+   Observamos cada sección.
+*/
+
+sections.forEach(
+    section => {
+
+        sectionObserver.observe(
+            section
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   ANIMACIÓN DE ENTRADA
+========================================================= */
+
+
+/*
+   Elementos que aparecerán
+   suavemente cuando entren
+   en pantalla.
+*/
+
+const animatedElements =
+    document.querySelectorAll(
+        ".info-card, .demo-section"
+    );
+
+
+/*
+   Configuración del observer.
+*/
+
+const animationObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+
+            threshold: 0.15
+
+        }
+    );
+
+
+animatedElements.forEach(
+    element => {
+
+        animationObserver.observe(
+            element
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   EFECTO SUAVE DEL HERO
+========================================================= */
+
+
+/*
+   Movimiento muy sutil del fondo
+   cuando movemos el mouse.
+*/
+
+const hero =
+    document.querySelector(
+        ".hero"
+    );
+
+
+const heroBackground =
+    document.querySelector(
+        ".hero-bg"
+    );
+
+
+if (hero && heroBackground) {
+
+    hero.addEventListener(
+        "mousemove",
+        event => {
+
+            /*
+               Calculamos la posición
+               del mouse.
+            */
+
+            const x =
+                (event.clientX /
+                    window.innerWidth -
+                    0.5);
+
+
+            const y =
+                (event.clientY /
+                    window.innerHeight -
+                    0.5);
+
+
+            /*
+               Movimiento pequeño
+               para no marear al usuario.
+            */
+
+            heroBackground.style.transform =
+                `translate(
+                    ${x * 8}px,
+                    ${y * 8}px
+                )`;
+
+        }
+    );
+
+
+    /*
+       Volvemos el fondo a su posición
+       cuando el mouse sale.
+    */
+
+    hero.addEventListener(
+        "mouseleave",
+        () => {
+
+            heroBackground.style.transform =
+                "translate(0, 0)";
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   PROTECCIÓN PARA REDUCIR MOVIMIENTO
+   SI EL USUARIO LO SOLICITA
+========================================================= */
+
+const prefersReducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+
+if (
+    prefersReducedMotion.matches
+) {
+
+    document.documentElement.style
+        .scrollBehavior = "auto";
+
+}
+
+
+
+/* =========================================================
+   CONSOLA
+========================================================= */
+
+console.log(
+    "%c MOVE HYBRID GAMES ",
+    "background:#7b2cff;color:white;font-size:16px;font-weight:bold;padding:8px;"
+);
+
+
+console.log(
+    "%c Próximo evento: 03 OCTUBRE 2026 ",
+    "color:#16d5f4;font-size:13px;font-weight:bold;"
+);
