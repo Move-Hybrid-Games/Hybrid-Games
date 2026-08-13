@@ -565,3 +565,247 @@ console.log(
     "%c Próximo evento: 03 OCTUBRE 2026 ",
     "color:#16d5f4;font-size:13px;font-weight:bold;"
 );
+
+/* =========================================================
+   MODAL DE INSCRIPCIÓN
+========================================================= */
+
+const registrationModal =
+    document.getElementById(
+        "registrationModal"
+    );
+
+
+const registrationClose =
+    document.getElementById(
+        "registrationClose"
+    );
+
+
+const registrationOverlay =
+    document.getElementById(
+        "registrationOverlay"
+    );
+
+
+const registrationForm =
+    document.getElementById(
+        "registrationForm"
+    );
+
+
+/*
+   Todos los botones que abren
+   la inscripción.
+*/
+
+const registrationButtons =
+    document.querySelectorAll(
+        ".btn-primary"
+    );
+
+
+/*
+   Abrir formulario
+*/
+
+registrationButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                registrationModal.classList.add(
+                    "active"
+                );
+
+                document.body.style.overflow =
+                    "hidden";
+
+            }
+        );
+
+    }
+);
+
+
+/*
+   Cerrar formulario
+*/
+
+function closeRegistration() {
+
+    registrationModal.classList.remove(
+        "active"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/*
+   Botón X
+*/
+
+if (registrationClose) {
+
+    registrationClose.addEventListener(
+        "click",
+        closeRegistration
+    );
+
+}
+
+
+/*
+   Clic fuera del formulario
+*/
+
+if (registrationOverlay) {
+
+    registrationOverlay.addEventListener(
+        "click",
+        closeRegistration
+    );
+
+}
+
+
+/*
+   Tecla ESC
+*/
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            registrationModal.classList.contains(
+                "active"
+            )
+        ) {
+
+            closeRegistration();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ENVÍO DEL FORMULARIO
+========================================================= */
+
+if (registrationForm) {
+
+    registrationForm.addEventListener(
+        "submit",
+        event => {
+
+            event.preventDefault();
+
+
+            /*
+               Validación HTML.
+            */
+
+            if (
+                !registrationForm.checkValidity()
+            ) {
+
+                registrationForm.reportValidity();
+
+                return;
+
+            }
+
+
+            const submitButton =
+                document.getElementById(
+                    "registrationSubmit"
+                );
+
+
+            const message =
+                document.getElementById(
+                    "registrationMessage"
+                );
+
+
+            /*
+               Estado de envío.
+            */
+
+            submitButton.disabled =
+                true;
+
+
+            submitButton.querySelector(
+                "span"
+            ).textContent =
+                "PROCESANDO...";
+
+
+            /*
+               IMPORTANTE:
+
+               Aquí posteriormente
+               conectaremos Power Automate.
+
+               Por ahora simulamos
+               el envío.
+            */
+
+            setTimeout(
+                () => {
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.querySelector(
+                        "span"
+                    ).textContent =
+                        "ENVIAR INSCRIPCIÓN";
+
+
+                    message.innerHTML =
+                        `
+                        <strong>
+                            ¡INSCRIPCIÓN RECIBIDA!
+                        </strong>
+                        <br><br>
+                        Tus datos están listos
+                        para ser registrados.
+                        `;
+
+
+                    message.classList.add(
+                        "active"
+                    );
+
+
+                    /*
+                       En la siguiente etapa
+                       enviaremos estos datos
+                       automáticamente a:
+
+                       1. Excel Online
+                       2. Correo electrónico
+                    */
+
+                },
+                1200
+            );
+
+        }
+    );
+
+}
