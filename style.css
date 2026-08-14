@@ -3035,3 +3035,15 @@ footer {
     }
 
 }
+
+/* ==========================================
+   QUITAR EFECTO NEÓN DEL TÍTULO PRINCIPAL
+========================================== */
+
+.hero h1,
+.hero h1 span,
+.title-white,
+.title-cyan {
+    text-shadow: none !important;
+    filter: none !important;
+}
