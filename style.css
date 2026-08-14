@@ -3050,53 +3050,49 @@ footer {
 
 /* =========================================================
    EVENTOS PASADOS
-   ROLLOS FOTOGRÁFICOS PREMIUM
+   NEGATIVO FOTOGRÁFICO REAL
 ========================================================= */
 
 .past-events {
     position: absolute;
 
-    top: 50%;
+    top: 27%;
     transform: translateY(-50%);
 
-    width: 185px;
+    width: 175px;
 
-    z-index: 2;
+    z-index: 3;
 
     text-align: center;
 
     pointer-events: none;
 }
 
-/* =========================================================
-   POSICIONES DESKTOP
-========================================================= */
+/* POSICIÓN DESKTOP */
 
 .past-events--left {
-    left: 2.5%;
+    left: 2.2%;
 }
 
 .past-events--right {
-    right: 2.5%;
+    right: 2.2%;
 }
 
 /* =========================================================
-   TÍTULO
+   TÍTULO EVENTOS PASADOS
 ========================================================= */
 
 .past-events-title {
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255,255,255,0.58);
 
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 800;
 
     line-height: 1.5;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     text-transform: uppercase;
 }
@@ -3104,20 +3100,20 @@ footer {
 .past-events-title span {
     color: #0057d9;
 
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 }
 
 /* =========================================================
-   ROLLO FOTOGRÁFICO
+   NEGATIVO
 ========================================================= */
 
 .film-strip {
     position: relative;
 
-    width: 165px;
-    height: 315px;
+    width: 155px;
+    height: 270px;
 
     margin: 0 auto;
 
@@ -3126,22 +3122,22 @@ footer {
     background:
         linear-gradient(
             90deg,
-            #080a0f 0%,
-            #11151d 8%,
-            #11151d 92%,
-            #080a0f 100%
+            #050609 0%,
+            #11151c 8%,
+            #11151c 92%,
+            #050609 100%
         );
 
-    border-left: 12px solid #090b10;
-    border-right: 12px solid #090b10;
+    border-left: 13px solid #07090d;
+    border-right: 13px solid #07090d;
 
     box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.55),
-        inset 0 0 25px rgba(0, 0, 0, 0.75);
+        0 20px 45px rgba(0,0,0,0.65),
+        inset 0 0 25px rgba(0,0,0,0.9);
 }
 
 /* =========================================================
-   PERFORACIONES REALISTAS
+   PERFORACIONES DEL NEGATIVO
 ========================================================= */
 
 .film-strip::before,
@@ -3153,9 +3149,9 @@ footer {
     top: 0;
     bottom: 0;
 
-    width: 10px;
+    width: 13px;
 
-    z-index: 20;
+    z-index: 30;
 
     background:
         repeating-linear-gradient(
@@ -3163,38 +3159,32 @@ footer {
             #020307 0px,
             #020307 8px,
             transparent 8px,
-            transparent 19px
+            transparent 18px
         );
 
     box-shadow:
-        inset 0 0 4px rgba(255, 255, 255, 0.03);
+        inset 0 0 4px rgba(255,255,255,0.05);
 }
-
-/* IZQUIERDA */
 
 .film-strip::before {
-    left: -12px;
+    left: -13px;
 }
 
-/* DERECHA */
-
 .film-strip::after {
-    right: -12px;
+    right: -13px;
 }
 
 /* =========================================================
-   BANDA INTERNA DEL NEGATIVO
+   PISTA DEL ROLLO
 ========================================================= */
 
-.film-strip .film-track {
+.film-track {
     position: relative;
 
     width: 100%;
 
-    padding: 0 2px;
-
     animation:
-        filmRollUp 18s ease-in-out infinite;
+        filmRollDesktop 16s ease-in-out infinite;
 }
 
 /* =========================================================
@@ -3205,42 +3195,44 @@ footer {
     position: relative;
 
     width: 100%;
-    height: 157px;
+    height: 135px;
 
-    padding: 7px 5px;
+    padding: 6px 5px;
 
     background:
         linear-gradient(
             180deg,
-            #151922,
-            #0c0f16
+            #181b22,
+            #0b0e14
         );
 
     border-bottom:
         1px solid
-        rgba(255, 255, 255, 0.08);
+        rgba(255,255,255,0.10);
 
     box-sizing: border-box;
 }
 
 /* =========================================================
-   IMAGEN
+   FOTO HORIZONTAL
 ========================================================= */
 
 .film-photo img {
-    width: 100%;
-    height: 143px;
-
     display: block;
+
+    width: 100%;
+    height: 123px;
 
     object-fit: cover;
 
-    filter:
-        saturate(0.82)
-        contrast(1.08)
-        brightness(0.90);
+    object-position: center;
 
-    opacity: 0.92;
+    filter:
+        saturate(0.78)
+        contrast(1.10)
+        brightness(0.88);
+
+    opacity: 0.94;
 
     transition:
         transform 0.5s ease,
@@ -3248,7 +3240,7 @@ footer {
 }
 
 /* =========================================================
-   MARCO DE FOTOGRAMA
+   MARCO DEL FOTOGRAMA
 ========================================================= */
 
 .film-photo::after {
@@ -3256,18 +3248,37 @@ footer {
 
     position: absolute;
 
-    inset: 7px 5px;
+    inset: 6px 5px;
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.08);
+        rgba(255,255,255,0.10);
 
     pointer-events: none;
 }
 
 /* =========================================================
-   NUMERACIÓN DE NEGATIVO
+   NÚMERO DEL NEGATIVO
 ========================================================= */
+
+.film-photo::before {
+    position: absolute;
+
+    right: 9px;
+    bottom: 9px;
+
+    z-index: 10;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-family:
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
 
 .film-photo:nth-child(1)::before {
     content: "01";
@@ -3285,28 +3296,14 @@ footer {
     content: "04";
 }
 
-.film-photo::before {
-    position: absolute;
-
-    right: 9px;
-    bottom: 9px;
-
-    z-index: 5;
-
-    color:
-        rgba(255, 255, 255, 0.45);
-
-    font-family:
-        monospace;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-}
-
 /* =========================================================
-   ANIMACIÓN IZQUIERDA
+   ROLLO IZQUIERDO
 ========================================================= */
+
+.past-events--left .film-track {
+    animation:
+        filmRollUp 16s ease-in-out infinite;
+}
 
 @keyframes filmRollUp {
 
@@ -3317,17 +3314,17 @@ footer {
 
     18%,
     30% {
-        transform: translateY(-157px);
+        transform: translateY(-135px);
     }
 
     36%,
     48% {
-        transform: translateY(-314px);
+        transform: translateY(-270px);
     }
 
     54%,
     66% {
-        transform: translateY(-471px);
+        transform: translateY(-405px);
     }
 
     72%,
@@ -3342,27 +3339,27 @@ footer {
 
 .past-events--right .film-track {
     animation:
-        filmRollDown 18s ease-in-out infinite;
+        filmRollDown 16s ease-in-out infinite;
 
     animation-delay:
-        -6s;
+        -5s;
 }
 
 @keyframes filmRollDown {
 
     0%,
     12% {
-        transform: translateY(-471px);
+        transform: translateY(-405px);
     }
 
     18%,
     30% {
-        transform: translateY(-314px);
+        transform: translateY(-270px);
     }
 
     36%,
     48% {
-        transform: translateY(-157px);
+        transform: translateY(-135px);
     }
 
     54%,
@@ -3372,7 +3369,7 @@ footer {
 
     72%,
     100% {
-        transform: translateY(-471px);
+        transform: translateY(-405px);
     }
 }
 
@@ -3384,22 +3381,37 @@ footer {
 
     .past-events {
         width: 145px;
+
+        top: 31%;
     }
 
     .film-strip {
-        width: 130px;
-        height: 270px;
+        width: 125px;
+        height: 235px;
 
-        border-left-width: 9px;
-        border-right-width: 9px;
+        border-left-width: 10px;
+        border-right-width: 10px;
+    }
+
+    .film-strip::before,
+    .film-strip::after {
+        width: 10px;
+    }
+
+    .film-strip::before {
+        left: -10px;
+    }
+
+    .film-strip::after {
+        right: -10px;
     }
 
     .film-photo {
-        height: 135px;
+        height: 118px;
     }
 
     .film-photo img {
-        height: 121px;
+        height: 106px;
     }
 
     .past-events--left {
@@ -3413,12 +3425,13 @@ footer {
 
 /* =========================================================
    MOBILE
-   LOS ROLLOS PASAN ARRIBA DEL TÍTULO
+   ROLLOS ARRIBA DEL TÍTULO
 ========================================================= */
 
 @media (max-width: 820px) {
 
     .hero {
+
         display: flex;
 
         flex-direction: column;
@@ -3427,201 +3440,220 @@ footer {
 
         align-items: center;
 
-        padding-top: 135px;
+        padding-top: 118px;
 
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    /* CONTENEDOR SUPERIOR */
+    /* =========================================
+       CONTENEDORES DE EVENTOS
+    ========================================= */
 
     .past-events {
-        position: relative;
 
-        top: auto;
-        left: auto;
-        right: auto;
+        position: absolute;
+
+        top: 92px;
+
+        width: 46%;
 
         transform: none;
 
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        margin-bottom: 28px;
+        margin: 0;
 
         z-index: 5;
     }
 
-    /* LOS DOS ROLLOS EN UNA SOLA FILA */
-
-    .past-events--left,
-    .past-events--right {
-        position: absolute;
-
-        top: 110px;
-
-        width: 145px;
-
-        margin: 0;
-    }
-
     .past-events--left {
-        left: 8px;
+
+        left: 2%;
+        right: auto;
     }
 
     .past-events--right {
-        right: 8px;
+
+        right: 2%;
+        left: auto;
     }
 
-    /* TÍTULO */
+    /* =========================================
+       TÍTULO
+    ========================================= */
 
     .past-events-title {
-        margin-bottom: 8px;
 
-        font-size: 7px;
+        margin-bottom: 6px;
+
+        font-size: 6px;
 
         letter-spacing: 2px;
     }
 
     .past-events-title span {
-        font-size: 7px;
 
-        letter-spacing: 3px;
+        font-size: 6px;
+
+        letter-spacing: 2.5px;
     }
 
-    /* ROLLOS */
+    /* =========================================
+       ROLLO HORIZONTAL
+    ========================================= */
 
     .film-strip {
-        width: 120px;
-        height: 145px;
 
-        border-left-width: 7px;
-        border-right-width: 7px;
-    }
+        width: 100%;
 
-    /* FOTOS */
+        max-width: 145px;
 
-    .film-photo {
-        height: 145px;
+        height: 105px;
 
-        padding: 5px;
-    }
-
-    .film-photo img {
-        height: 135px;
+        border-left-width: 8px;
+        border-right-width: 8px;
     }
 
     /* PERFORACIONES */
 
     .film-strip::before,
     .film-strip::after {
-        width: 7px;
+
+        width: 8px;
     }
 
     .film-strip::before {
-        left: -7px;
+        left: -8px;
     }
 
     .film-strip::after {
-        right: -7px;
+        right: -8px;
     }
 
-    /* ANIMACIÓN */
+    /* =========================================
+       FOTOGRAMAS HORIZONTALES
+    ========================================= */
+
+    .film-photo {
+
+        width: 100%;
+
+        height: 105px;
+
+        padding: 5px;
+    }
+
+    .film-photo img {
+
+        width: 100%;
+
+        height: 95px;
+
+        object-fit: cover;
+    }
+
+    .film-photo::after {
+
+        inset: 5px;
+    }
+
+    /* =========================================
+       ANIMACIÓN MOBILE
+    ========================================= */
 
     .past-events--left .film-track {
+
         animation:
-            filmRollUpMobile 16s ease-in-out infinite;
+            filmRollMobileLeft
+            15s ease-in-out infinite;
     }
 
     .past-events--right .film-track {
+
         animation:
-            filmRollDownMobile 16s ease-in-out infinite;
+            filmRollMobileRight
+            15s ease-in-out infinite;
 
         animation-delay:
-            -5s;
+            -4s;
     }
 
-    /* CENTRO */
+    /* =========================================
+       TÍTULO CENTRAL
+    ========================================= */
 
     .hero-content {
+
         position: relative;
 
         z-index: 10;
 
         width: 100%;
 
-        margin-top: 170px;
-    }
-
-    .hero h1 {
-        position: relative;
-
-        z-index: 20;
+        margin-top: 145px;
     }
 }
 
 /* =========================================================
-   ANIMACIONES MOBILE
+   ANIMACIÓN MOBILE IZQUIERDA
 ========================================================= */
 
-@keyframes filmRollUpMobile {
+@keyframes filmRollMobileLeft {
 
     0%,
-    15% {
+    12% {
         transform: translateY(0);
     }
 
-    22%,
-    37% {
-        transform: translateY(-145px);
+    18%,
+    30% {
+        transform: translateY(-105px);
     }
 
-    44%,
-    59% {
-        transform: translateY(-290px);
+    36%,
+    48% {
+        transform: translateY(-210px);
     }
 
-    66%,
-    81% {
-        transform: translateY(-435px);
+    54%,
+    66% {
+        transform: translateY(-315px);
     }
 
-    88%,
+    72%,
     100% {
         transform: translateY(0);
     }
 }
 
-@keyframes filmRollDownMobile {
+/* =========================================================
+   ANIMACIÓN MOBILE DERECHA
+========================================================= */
+
+@keyframes filmRollMobileRight {
 
     0%,
-    15% {
-        transform: translateY(-435px);
+    12% {
+        transform: translateY(-315px);
     }
 
-    22%,
-    37% {
-        transform: translateY(-290px);
+    18%,
+    30% {
+        transform: translateY(-210px);
     }
 
-    44%,
-    59% {
-        transform: translateY(-145px);
+    36%,
+    48% {
+        transform: translateY(-105px);
     }
 
-    66%,
-    81% {
+    54%,
+    66% {
         transform: translateY(0);
     }
 
-    88%,
+    72%,
     100% {
-        transform: translateY(-435px);
+        transform: translateY(-315px);
     }
 }
 
@@ -3632,38 +3664,35 @@ footer {
 @media (max-width: 430px) {
 
     .hero {
-        padding-top: 125px;
+        padding-top: 112px;
     }
 
-    .past-events--left {
-        left: 2px;
-    }
+    .past-events {
 
-    .past-events--right {
-        right: 2px;
+        top: 87px;
+
+        width: 47%;
     }
 
     .film-strip {
-        width: 105px;
-        height: 125px;
+
+        max-width: 125px;
+
+        height: 92px;
     }
 
     .film-photo {
-        height: 125px;
+
+        height: 92px;
     }
 
     .film-photo img {
-        height: 115px;
-    }
 
-    .past-events--left,
-    .past-events--right {
-        width: 120px;
-
-        top: 103px;
+        height: 82px;
     }
 
     .hero-content {
-        margin-top: 150px;
+
+        margin-top: 135px;
     }
 }
