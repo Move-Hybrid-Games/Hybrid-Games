@@ -208,7 +208,7 @@
                         <div class="form-group">
 
                             <label for="document">
-                                Cédula / Documento *
+                                Cédula / Documento Participante 1 *
                             </label>
 
                             <input
@@ -221,13 +221,28 @@
 
                         </div>
 
+                                                <div class="form-group">
+
+                            <label for="document">
+                                Cédula / Documento participante 2*
+                            </label>
+
+                            <input
+                                type="text"
+                                id="document"
+                                name="document"
+                                placeholder="Ej. 12345678"
+                                required
+                            >
+
+                        </div>
 
                         <!-- FECHA -->
 
                         <div class="form-group">
 
                             <label for="birthDate">
-                                Fecha de nacimiento *
+                                Fecha de nacimiento participante 1*
                             </label>
 
                             <input
@@ -239,13 +254,55 @@
 
                         </div>
 
+                        <div class="form-group">
 
+                            <label for="birthDate">
+                                Fecha de nacimiento Participante 2 *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="birthDate"
+                                name="birthDate"
+                                required
+                            >
+
+                        </div>
+                        
                         <!-- SEXO -->
 
                         <div class="form-group">
 
                             <label for="gender">
-                                Sexo *
+                                Sexo Participante 1 *
+                            </label>
+
+                            <select
+                                id="gender"
+                                name="gender"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="Masculino">
+                                    Masculino
+                                </option>
+
+                                <option value="Femenino">
+                                    Femenino
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                         <div class="form-group">
+
+                            <label for="gender">
+                                Sexo Participante 2 *
                             </label>
 
                             <select
@@ -271,12 +328,13 @@
                         </div>
 
 
+                        
                         <!-- NACIONALIDAD -->
 
                         <div class="form-group">
 
                             <label for="nationality">
-                                Nacionalidad *
+                                Nacionalidad Participante 1*
                             </label>
 
                             <input
@@ -289,7 +347,23 @@
 
                         </div>
 
+                            <div class="form-group">
 
+                            <label for="nationality">
+                                Nacionalidad Participante 2*
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nationality"
+                                name="nationality"
+                                placeholder="Ej. Boliviana"
+                                required
+                            >
+
+                        </div>
+
+                        
                         <!-- CIUDAD -->
 
                         <div class="form-group">
