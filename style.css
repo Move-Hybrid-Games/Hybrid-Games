@@ -2960,3 +2960,78 @@ footer {
     }
 
 }
+
+/* =========================================================
+   PÁGINA DE INSCRIPCIÓN
+========================================================= */
+
+.registration-page {
+    min-height: 100vh;
+
+    padding:
+        145px 24px 80px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(0, 59, 154, 0.16),
+            transparent 40%
+        );
+}
+
+
+.registration-page .registration-container {
+    width:
+        min(900px, 100%);
+
+    max-height:
+        none;
+
+    overflow:
+        visible;
+
+    margin:
+        30px auto 0;
+
+    animation:
+        registrationOpen
+        0.45s ease;
+}
+
+
+/* TITULOS DE SECCIÓN */
+
+.registration-page .form-section-title h2 {
+    color: #e8edf7;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .registration-page {
+        padding:
+            120px 10px 50px;
+    }
+
+    .registration-page .registration-container {
+        margin-top: 10px;
+
+        padding:
+            30px 20px;
+    }
+
+}
