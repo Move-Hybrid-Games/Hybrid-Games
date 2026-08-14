@@ -3947,3 +3947,810 @@ footer {
         margin-top: 118px;
     }
 }
+
+/* =========================================================
+   MOVE HYBRID GAMES
+   CORRECCIÓN FINAL — ROLLOS FOTOGRÁFICOS
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+   4 FOTOS POR LADO
+   3 FOTOS VISIBLES
+   SIN ESPACIOS VACÍOS
+   ========================================================= */
+
+@media (min-width: 821px) {
+
+    .past-events {
+        position: absolute;
+        top: 30%;
+        width: 175px;
+        transform: translateY(-50%);
+        z-index: 3;
+        text-align: center;
+        pointer-events: none;
+    }
+
+
+    .past-events--left {
+        left: 2.2%;
+        right: auto;
+    }
+
+
+    .past-events--right {
+        right: 2.2%;
+        left: auto;
+    }
+
+
+    /* TÍTULO */
+
+    .past-events-title {
+        margin-bottom: 10px;
+        color: rgba(255,255,255,0.58);
+        font-size: 8px;
+        font-weight: 800;
+        line-height: 1.5;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+
+    .past-events-title span {
+        color: #0057d9;
+        font-size: 8px;
+        letter-spacing: 4px;
+    }
+
+
+    /* =====================================================
+       ROLLO
+       3 FOTOS VISIBLES
+       ===================================================== */
+
+    .film-strip {
+        position: relative;
+
+        width: 165px;
+
+        /*
+           3 fotos x 135px
+        */
+        height: 405px;
+
+        margin: 0 auto;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                90deg,
+                #050609 0%,
+                #11151c 8%,
+                #11151c 92%,
+                #050609 100%
+            );
+
+        border-left: 13px solid #07090d;
+        border-right: 13px solid #07090d;
+
+        box-shadow:
+            0 20px 45px rgba(0,0,0,0.65),
+            inset 0 0 25px rgba(0,0,0,0.9);
+    }
+
+
+    /* =====================================================
+       PERFORACIONES DEL NEGATIVO
+       ===================================================== */
+
+    .film-strip::before,
+    .film-strip::after {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+
+        width: 13px;
+
+        z-index: 30;
+
+        background:
+            repeating-linear-gradient(
+                to bottom,
+                #020307 0px,
+                #020307 8px,
+                transparent 8px,
+                transparent 18px
+            );
+
+        box-shadow:
+            inset 0 0 4px rgba(255,255,255,0.05);
+    }
+
+
+    .film-strip::before {
+        left: -13px;
+    }
+
+
+    .film-strip::after {
+        right: -13px;
+    }
+
+
+    /* =====================================================
+       TRACK
+       ===================================================== */
+
+    .film-track {
+        position: relative;
+        width: 100%;
+        animation: none;
+    }
+
+
+    /* =====================================================
+       FOTOGRAMAS
+       ===================================================== */
+
+    .film-photo {
+
+        position: relative;
+
+        width: 100%;
+        height: 135px;
+
+        padding: 6px 5px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #181b22,
+                #0b0e14
+            );
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.10);
+
+        box-sizing: border-box;
+    }
+
+
+    .film-photo img {
+
+        display: block;
+
+        width: 100%;
+        height: 123px;
+
+        object-fit: cover;
+        object-position: center;
+
+        filter:
+            saturate(0.78)
+            contrast(1.10)
+            brightness(0.88);
+
+        opacity: 0.94;
+    }
+
+
+    /* MARCO */
+
+    .film-photo::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 6px 5px;
+
+        border:
+            1px solid
+            rgba(255,255,255,0.10);
+
+        pointer-events: none;
+    }
+
+
+    /* NÚMEROS */
+
+    .film-photo::before {
+
+        position: absolute;
+
+        right: 9px;
+        bottom: 9px;
+
+        z-index: 10;
+
+        color:
+            rgba(255,255,255,0.48);
+
+        font-family: monospace;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .film-photo:nth-child(1)::before {
+        content: "01";
+    }
+
+    .film-photo:nth-child(2)::before {
+        content: "02";
+    }
+
+    .film-photo:nth-child(3)::before {
+        content: "03";
+    }
+
+    .film-photo:nth-child(4)::before {
+        content: "04";
+    }
+
+
+    /* =====================================================
+       ROLLO IZQUIERDO
+       ARRIBA → ABAJO
+       ===================================================== */
+
+    .past-events--left .film-track {
+
+        animation:
+            filmRollLeft
+            12s
+            ease-in-out
+            infinite;
+    }
+
+
+    @keyframes filmRollLeft {
+
+        0%,
+        18% {
+            transform: translateY(0);
+        }
+
+        25%,
+        43% {
+            transform: translateY(-135px);
+        }
+
+        50%,
+        68% {
+            transform: translateY(-270px);
+        }
+
+        /*
+           Volvemos directamente al inicio.
+           NUNCA llegamos a -405px.
+        */
+
+        75%,
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =====================================================
+       ROLLO DERECHO
+       SENTIDO CONTRARIO
+       ===================================================== */
+
+    .past-events--right .film-track {
+
+        animation:
+            filmRollRight
+            12s
+            ease-in-out
+            infinite;
+    }
+
+
+    @keyframes filmRollRight {
+
+        0%,
+        18% {
+            transform: translateY(-270px);
+        }
+
+        25%,
+        43% {
+            transform: translateY(-135px);
+        }
+
+        50%,
+        68% {
+            transform: translateY(0);
+        }
+
+        75%,
+        100% {
+            transform: translateY(-270px);
+        }
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 821px) and (max-width: 1100px) {
+
+    .past-events {
+        width: 145px;
+    }
+
+    .film-strip {
+
+        width: 125px;
+
+        /*
+           3 fotos visibles
+        */
+
+        height: 354px;
+
+        border-left-width: 10px;
+        border-right-width: 10px;
+    }
+
+
+    .film-strip::before,
+    .film-strip::after {
+        width: 10px;
+    }
+
+
+    .film-strip::before {
+        left: -10px;
+    }
+
+
+    .film-strip::after {
+        right: -10px;
+    }
+
+
+    .film-photo {
+        height: 118px;
+    }
+
+
+    .film-photo img {
+        height: 106px;
+    }
+
+
+    .past-events--left {
+        left: 1%;
+    }
+
+
+    .past-events--right {
+        right: 1%;
+    }
+
+
+    .past-events--left .film-track {
+
+        animation:
+            filmRollLeftTablet
+            12s
+            ease-in-out
+            infinite;
+    }
+
+
+    @keyframes filmRollLeftTablet {
+
+        0%,
+        18% {
+            transform: translateY(0);
+        }
+
+        25%,
+        43% {
+            transform: translateY(-118px);
+        }
+
+        50%,
+        68% {
+            transform: translateY(-236px);
+        }
+
+        75%,
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+    .past-events--right .film-track {
+
+        animation:
+            filmRollRightTablet
+            12s
+            ease-in-out
+            infinite;
+    }
+
+
+    @keyframes filmRollRightTablet {
+
+        0%,
+        18% {
+            transform: translateY(-236px);
+        }
+
+        25%,
+        43% {
+            transform: translateY(-118px);
+        }
+
+        50%,
+        68% {
+            transform: translateY(0);
+        }
+
+        75%,
+        100% {
+            transform: translateY(-236px);
+        }
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   SOLO IZQUIERDO
+   SIN MOVIMIENTO
+   EXTREMO A EXTREMO
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    /*
+       HERO
+    */
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding-top: 115px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    /*
+       CONTENEDOR
+    */
+
+    .past-events {
+
+        position: absolute;
+
+        top: 92px;
+        left: 0;
+
+        width: 100%;
+        height: 105px;
+
+        margin: 0;
+
+        transform: none;
+
+        z-index: 5;
+
+        overflow: hidden;
+
+        text-align: left;
+    }
+
+
+    /*
+       SOLO IZQUIERDO
+    */
+
+    .past-events--left {
+        display: block;
+
+        left: 0;
+        right: auto;
+
+        width: 100%;
+    }
+
+
+    /*
+       EL DERECHO DESAPARECE
+    */
+
+    .past-events--right {
+        display: none !important;
+    }
+
+
+    /*
+       TÍTULO
+    */
+
+    .past-events-title {
+
+        position: absolute;
+
+        top: -1px;
+        left: 15px;
+
+        z-index: 50;
+
+        margin: 0;
+
+        color: rgba(255,255,255,0.65);
+
+        font-size: 7px;
+
+        line-height: 1.4;
+
+        letter-spacing: 2px;
+    }
+
+
+    .past-events-title span {
+
+        color: #0057d9;
+
+        font-size: 7px;
+
+        letter-spacing: 3px;
+    }
+
+
+    /*
+       ROLLO COMPLETO
+       DE BORDE A BORDE
+    */
+
+    .past-events--left .film-strip {
+
+        position: absolute;
+
+        left: 0;
+        top: 14px;
+
+        width: 100vw;
+
+        max-width: none;
+
+        height: 88px;
+
+        margin: 0;
+
+        overflow: hidden;
+
+        border-left: 0;
+        border-right: 0;
+
+        border-top: 8px solid #07090d;
+        border-bottom: 8px solid #07090d;
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,0.65),
+            inset 0 0 25px rgba(0,0,0,0.85);
+    }
+
+
+    /*
+       PERFORACIONES ARRIBA
+    */
+
+    .past-events--left .film-strip::before,
+    .past-events--left .film-strip::after {
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        height: 8px;
+
+        background:
+            repeating-linear-gradient(
+                to right,
+                #020307 0px,
+                #020307 9px,
+                transparent 9px,
+                transparent 20px
+            );
+    }
+
+
+    .past-events--left .film-strip::before {
+
+        top: -8px;
+        bottom: auto;
+    }
+
+
+    /*
+       PERFORACIONES ABAJO
+    */
+
+    .past-events--left .film-strip::after {
+
+        top: auto;
+        bottom: -8px;
+    }
+
+
+    /*
+       TRACK ESTÁTICO
+    */
+
+    .past-events--left .film-track {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        width: 100%;
+        height: 100%;
+
+        transform: none !important;
+
+        animation: none !important;
+    }
+
+
+    /*
+       4 FOTOS
+       OCUPANDO TODA LA PANTALLA
+    */
+
+    .past-events--left .film-photo {
+
+        width: 100%;
+        height: 72px;
+
+        padding: 4px;
+
+        border-right:
+            1px solid
+            rgba(255,255,255,0.12);
+
+        border-bottom: 0;
+
+        overflow: hidden;
+    }
+
+
+    .past-events--left .film-photo:last-child {
+        border-right: none;
+    }
+
+
+    /*
+       IMAGEN
+    */
+
+    .past-events--left .film-photo img {
+
+        width: 100%;
+        height: 64px;
+
+        object-fit: cover;
+
+        filter:
+            saturate(0.80)
+            contrast(1.08)
+            brightness(0.90);
+
+        opacity: 0.94;
+    }
+
+
+    /*
+       MARCO
+    */
+
+    .past-events--left .film-photo::after {
+
+        inset: 4px;
+
+        border:
+            1px solid
+            rgba(255,255,255,0.10);
+    }
+
+
+    /*
+       NÚMERO
+    */
+
+    .past-events--left .film-photo::before {
+
+        right: 7px;
+        bottom: 7px;
+
+        font-size: 6px;
+    }
+
+
+    /*
+       EL TÍTULO PRINCIPAL BAJA
+       PARA NO CHOCAR CON EL ROLLO
+    */
+
+    .hero-content {
+
+        position: relative;
+
+        z-index: 10;
+
+        width: 100%;
+
+        margin-top: 115px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .past-events {
+
+        top: 88px;
+
+        height: 105px;
+    }
+
+
+    .past-events--left .film-strip {
+
+        top: 14px;
+
+        width: 100vw;
+
+        height: 86px;
+    }
+
+
+    .past-events--left .film-photo {
+
+        height: 70px;
+
+        padding: 4px;
+    }
+
+
+    .past-events--left .film-photo img {
+
+        height: 62px;
+    }
+
+
+    .hero-content {
+
+        margin-top: 112px;
+    }
+}
