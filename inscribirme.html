@@ -1,662 +1,770 @@
-<!-- =========================================================
-     MODAL DE INSCRIPCIÓN
-========================================================= -->
+<!DOCTYPE html>
+<html lang="es">
 
-<div class="registration-modal" id="registrationModal">
+<head>
 
-    <div class="registration-overlay" id="registrationOverlay"></div>
+    <meta charset="UTF-8">
 
-    <div class="registration-container">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        <!-- CERRAR -->
-        <button
-            type="button"
-            class="registration-close"
-            id="registrationClose"
-            aria-label="Cerrar formulario"
-        >
-            ×
-        </button>
+    <meta
+        name="theme-color"
+        content="#02050b"
+    >
+
+    <meta
+        name="description"
+        content="Inscripción oficial MOVE HYBRID GAMES — 03 de octubre de 2026."
+    >
+
+    <title>Inscripción | MOVE HYBRID GAMES</title>
 
 
-        <!-- ENCABEZADO -->
+    <!-- GOOGLE FONT -->
 
-        <div class="registration-header">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-            <span class="registration-kicker">
-                MOVE HYBRID GAMES
-            </span>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-            <h2>
-                INSCRIPCIÓN
-            </h2>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
-            <p>
-                Completa tus datos para participar
-                en el próximo evento.
-            </p>
+
+    <!-- CSS PRINCIPAL -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         EFECTOS DE FONDO
+    =========================================== -->
+
+    <div class="page-glow page-glow--one"></div>
+
+    <div class="page-glow page-glow--two"></div>
+
+
+    <!-- ==========================================
+         HEADER SIMPLE
+    =========================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-shell">
+
+
+            <!-- LOGO -->
+
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="MOVE HYBRID GAMES"
+            >
+
+                <img
+                    src="logo.png"
+                    alt="MOVE Hybrid Games"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+
+                    <b>MOVE</b>
+
+                    <small>
+                        HYBRID GAMES
+                    </small>
+
+                </span>
+
+            </a>
+
 
         </div>
 
+    </header>
 
-        <!-- FORMULARIO -->
 
-        <form
-            id="registrationForm"
-            class="registration-form"
-        >
+    <!-- ==========================================
+         PÁGINA DE INSCRIPCIÓN
+    =========================================== -->
 
-            <!-- =================================================
-                 DATOS DEL ATLETA
-            ================================================= -->
+    <main class="registration-page">
 
-            <div class="form-section">
 
-                <div class="form-section-title">
+        <!-- ======================================
+             CONTENEDOR
+        ======================================= -->
 
-                    <span>01</span>
+        <div class="registration-container">
 
-                    <h3>
-                        DATOS DEL ATLETA
-                    </h3>
 
-                </div>
+            <!-- ENCABEZADO -->
 
+            <div class="registration-header">
 
-                <div class="form-grid">
+                <span class="registration-kicker">
+                    MOVE HYBRID GAMES
+                </span>
 
-                    <!-- NOMBRE -->
+                <h1>
+                    INSCRIPCIÓN
+                </h1>
 
-                    <div class="form-group form-full">
-
-                        <label for="fullName">
-                            Nombre completo *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="fullName"
-                            name="fullName"
-                            placeholder="Ingresa tu nombre completo"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- DOCUMENTO -->
-
-                    <div class="form-group">
-
-                        <label for="document">
-                            Cédula / Documento *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="document"
-                            name="document"
-                            placeholder="Ej. 12345678"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- FECHA NACIMIENTO -->
-
-                    <div class="form-group">
-
-                        <label for="birthDate">
-                            Fecha de nacimiento *
-                        </label>
-
-                        <input
-                            type="date"
-                            id="birthDate"
-                            name="birthDate"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- SEXO -->
-
-                    <div class="form-group">
-
-                        <label for="gender">
-                            Sexo *
-                        </label>
-
-                        <select
-                            id="gender"
-                            name="gender"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="Masculino">
-                                Masculino
-                            </option>
-
-                            <option value="Femenino">
-                                Femenino
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- NACIONALIDAD -->
-
-                    <div class="form-group">
-
-                        <label for="nationality">
-                            Nacionalidad *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nationality"
-                            name="nationality"
-                            placeholder="Ej. Boliviana"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- CIUDAD -->
-
-                    <div class="form-group">
-
-                        <label for="city">
-                            Ciudad *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="city"
-                            name="city"
-                            placeholder="Ej. Santa Cruz"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- TELÉFONO -->
-
-                    <div class="form-group">
-
-                        <label for="phone">
-                            WhatsApp / Teléfono *
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="+591 XXXXXXXX"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- EMAIL -->
-
-                    <div class="form-group form-full">
-
-                        <label for="email">
-                            Correo electrónico *
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="tuemail@ejemplo.com"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 INFORMACIÓN DEPORTIVA
-            ================================================= -->
-
-            <div class="form-section">
-
-                <div class="form-section-title">
-
-                    <span>02</span>
-
-                    <h3>
-                        INFORMACIÓN DEPORTIVA
-                    </h3>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <!-- CATEGORÍA -->
-
-                    <div class="form-group">
-
-                        <label for="category">
-                            Categoría *
-                        </label>
-
-                        <select
-                            id="category"
-                            name="category"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona tu categoría
-                            </option>
-
-                            <option value="Individual Masculino">
-                                Individual Masculino
-                            </option>
-
-                            <option value="Individual Femenino">
-                                Individual Femenino
-                            </option>
-
-                            <option value="Doubles Masculino">
-                                Doubles Masculino
-                            </option>
-
-                            <option value="Doubles Femenino">
-                                Doubles Femenino
-                            </option>
-
-                            <option value="Doubles Mixto">
-                                Doubles Mixto
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- NIVEL -->
-
-                    <div class="form-group">
-
-                        <label for="level">
-                            Nivel *
-                        </label>
-
-                        <select
-                            id="level"
-                            name="level"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="Open">
-                                Open
-                            </option>
-
-                            <option value="Intermediate">
-                                Intermediate
-                            </option>
-
-                            <option value="Advanced">
-                                Advanced
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- BOX -->
-
-                    <div class="form-group form-full">
-
-                        <label for="gym">
-                            Box / Gimnasio
-                        </label>
-
-                        <input
-                            type="text"
-                            id="gym"
-                            name="gym"
-                            placeholder="Nombre de tu Box o gimnasio"
-                        >
-
-                    </div>
-
-
-                    <!-- EXPERIENCIA -->
-
-                    <div class="form-group">
-
-                        <label for="experience">
-                            Experiencia en competencias *
-                        </label>
-
-                        <select
-                            id="experience"
-                            name="experience"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="Ninguna">
-                                Ninguna
-                            </option>
-
-                            <option value="Principiante">
-                                Principiante
-                            </option>
-
-                            <option value="Intermedia">
-                                Intermedia
-                            </option>
-
-                            <option value="Avanzada">
-                                Avanzada
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- TALLA -->
-
-                    <div class="form-group">
-
-                        <label for="shirtSize">
-                            Talla de camiseta *
-                        </label>
-
-                        <select
-                            id="shirtSize"
-                            name="shirtSize"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona
-                            </option>
-
-                            <option value="XS">XS</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="XXL">XXL</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 CONTACTO DE EMERGENCIA
-            ================================================= -->
-
-            <div class="form-section">
-
-                <div class="form-section-title">
-
-                    <span>03</span>
-
-                    <h3>
-                        CONTACTO DE EMERGENCIA
-                    </h3>
-
-                </div>
-
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label for="emergencyName">
-                            Nombre completo *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="emergencyName"
-                            name="emergencyName"
-                            placeholder="Nombre del contacto"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="emergencyPhone">
-                            Teléfono *
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="emergencyPhone"
-                            name="emergencyPhone"
-                            placeholder="+591 XXXXXXXX"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 PAGO
-            ================================================= -->
-
-            <div class="payment-section">
-
-                <div class="payment-number">
-                    04
-                </div>
-
-                <div class="payment-content">
-
-                    <span class="registration-kicker">
-                        PASO FINAL
-                    </span>
-
-                    <h3>
-                        REALIZA TU PAGO
-                    </h3>
-
-                    <p>
-                        Escanea el código QR para realizar
-                        el pago de tu inscripción.
-                    </p>
-
-
-                    <!-- QR -->
-
-                    <div class="payment-qr">
-
-                        <!--
-                            AQUÍ COLOCAREMOS EL QR REAL.
-
-                            Por ahora cambia:
-                            qr-pago.png
-
-                            por el nombre de tu archivo.
-                        -->
-
-                        <img
-                            src="qr-pago.png"
-                            alt="QR de pago MOVE Hybrid Games"
-                        >
-
-                    </div>
-
-
-                    <p class="payment-note">
-
-                        Una vez realizado el pago,
-                        conserva tu comprobante.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 AUTORIZACIONES
-            ================================================= -->
-
-            <div class="form-section">
-
-                <div class="form-section-title">
-
-                    <span>05</span>
-
-                    <h3>
-                        CONFIRMACIÓN
-                    </h3>
-
-                </div>
-
-
-                <div class="checkbox-group">
-
-                    <label class="checkbox-label">
-
-                        <input
-                            type="checkbox"
-                            id="rulesAccepted"
-                            name="rulesAccepted"
-                            required
-                        >
-
-                        <span class="custom-checkbox"></span>
-
-                        <span>
-                            Acepto el reglamento oficial
-                            de MOVE HYBRID GAMES. *
-                        </span>
-
-                    </label>
-
-
-                    <label class="checkbox-label">
-
-                        <input
-                            type="checkbox"
-                            id="imageAccepted"
-                            name="imageAccepted"
-                            required
-                        >
-
-                        <span class="custom-checkbox"></span>
-
-                        <span>
-                            Autorizo el uso de mi imagen
-                            durante el evento. *
-                        </span>
-
-                    </label>
-
-
-                    <label class="checkbox-label">
-
-                        <input
-                            type="checkbox"
-                            id="dataAccepted"
-                            name="dataAccepted"
-                            required
-                        >
-
-                        <span class="custom-checkbox"></span>
-
-                        <span>
-                            Declaro que la información
-                            proporcionada es correcta. *
-                        </span>
-
-                    </label>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 BOTÓN
-            ================================================= -->
-
-            <div class="registration-submit">
-
-                <button
-                    type="submit"
-                    class="registration-button"
-                    id="registrationSubmit"
-                >
-
-                    <span>
-                        ENVIAR INSCRIPCIÓN
-                    </span>
-
-                    <span class="submit-arrow">
-                        →
-                    </span>
-
-                </button>
-
-
-                <p class="required-note">
-                    * Campos obligatorios
+                <p>
+                    Completa tus datos para participar
+                    en el próximo evento.
                 </p>
 
             </div>
 
 
-            <!-- =================================================
-                 MENSAJE
-            ================================================= -->
+            <!-- ==================================
+                 FORMULARIO
+            =================================== -->
 
-            <div
-                class="registration-message"
-                id="registrationMessage"
-            ></div>
+            <form
+                id="registrationForm"
+                class="registration-form"
+            >
 
-        </form>
 
-    </div>
+                <!-- =================================
+                     DATOS DEL ATLETA
+                ================================== -->
 
-</div>
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <span>01</span>
+
+                        <h2>
+                            DATOS DEL ATLETA
+                        </h2>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="form-group form-full">
+
+                            <label for="fullName">
+                                Nombre completo *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Ingresa tu nombre completo"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DOCUMENTO -->
+
+                        <div class="form-group">
+
+                            <label for="document">
+                                Cédula / Documento *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="document"
+                                name="document"
+                                placeholder="Ej. 12345678"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- FECHA -->
+
+                        <div class="form-group">
+
+                            <label for="birthDate">
+                                Fecha de nacimiento *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="birthDate"
+                                name="birthDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SEXO -->
+
+                        <div class="form-group">
+
+                            <label for="gender">
+                                Sexo *
+                            </label>
+
+                            <select
+                                id="gender"
+                                name="gender"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="Masculino">
+                                    Masculino
+                                </option>
+
+                                <option value="Femenino">
+                                    Femenino
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- NACIONALIDAD -->
+
+                        <div class="form-group">
+
+                            <label for="nationality">
+                                Nacionalidad *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nationality"
+                                name="nationality"
+                                placeholder="Ej. Boliviana"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- CIUDAD -->
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                Ciudad *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Ej. Santa Cruz"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TELEFONO -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                WhatsApp / Teléfono *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+591 XXXXXXXX"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group form-full">
+
+                            <label for="email">
+                                Correo electrónico *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="tuemail@ejemplo.com"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     INFORMACIÓN DEPORTIVA
+                ================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <span>02</span>
+
+                        <h2>
+                            INFORMACIÓN DEPORTIVA
+                        </h2>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- CATEGORIA -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Categoría *
+                            </label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona tu categoría
+                                </option>
+
+                                <option value="Individual Masculino">
+                                    Individual Masculino
+                                </option>
+
+                                <option value="Individual Femenino">
+                                    Individual Femenino
+                                </option>
+
+                                <option value="Doubles Masculino">
+                                    Doubles Masculino
+                                </option>
+
+                                <option value="Doubles Femenino">
+                                    Doubles Femenino
+                                </option>
+
+                                <option value="Doubles Mixto">
+                                    Doubles Mixto
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- NIVEL -->
+
+                        <div class="form-group">
+
+                            <label for="level">
+                                Nivel *
+                            </label>
+
+                            <select
+                                id="level"
+                                name="level"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="Open">
+                                    Open
+                                </option>
+
+                                <option value="Intermediate">
+                                    Intermediate
+                                </option>
+
+                                <option value="Advanced">
+                                    Advanced
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- BOX -->
+
+                        <div class="form-group form-full">
+
+                            <label for="gym">
+                                Box / Gimnasio
+                            </label>
+
+                            <input
+                                type="text"
+                                id="gym"
+                                name="gym"
+                                placeholder="Nombre de tu Box o gimnasio"
+                            >
+
+                        </div>
+
+
+                        <!-- EXPERIENCIA -->
+
+                        <div class="form-group">
+
+                            <label for="experience">
+                                Experiencia en competencias *
+                            </label>
+
+                            <select
+                                id="experience"
+                                name="experience"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="Ninguna">
+                                    Ninguna
+                                </option>
+
+                                <option value="Principiante">
+                                    Principiante
+                                </option>
+
+                                <option value="Intermedia">
+                                    Intermedia
+                                </option>
+
+                                <option value="Avanzada">
+                                    Avanzada
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- TALLA -->
+
+                        <div class="form-group">
+
+                            <label for="shirtSize">
+                                Talla de camiseta *
+                            </label>
+
+                            <select
+                                id="shirtSize"
+                                name="shirtSize"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona
+                                </option>
+
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     CONTACTO DE EMERGENCIA
+                ================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <span>03</span>
+
+                        <h2>
+                            CONTACTO DE EMERGENCIA
+                        </h2>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="emergencyName">
+                                Nombre completo *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="emergencyName"
+                                name="emergencyName"
+                                placeholder="Nombre del contacto"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="emergencyPhone">
+                                Teléfono *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="emergencyPhone"
+                                name="emergencyPhone"
+                                placeholder="+591 XXXXXXXX"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     PAGO
+                ================================== -->
+
+                <div class="payment-section">
+
+                    <div class="payment-number">
+                        04
+                    </div>
+
+
+                    <div class="payment-content">
+
+                        <span class="registration-kicker">
+                            PASO FINAL
+                        </span>
+
+                        <h3>
+                            REALIZA TU PAGO
+                        </h3>
+
+                        <p>
+                            Escanea el código QR para realizar
+                            el pago de tu inscripción.
+                        </p>
+
+
+                        <div class="payment-qr">
+
+                            <img
+                                src="qr-pago.png"
+                                alt="QR de pago MOVE Hybrid Games"
+                            >
+
+                        </div>
+
+
+                        <p class="payment-note">
+
+                            Una vez realizado el pago,
+                            conserva tu comprobante.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     CONFIRMACIÓN
+                ================================== -->
+
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <span>05</span>
+
+                        <h2>
+                            CONFIRMACIÓN
+                        </h2>
+
+                    </div>
+
+
+                    <div class="checkbox-group">
+
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="rulesAccepted"
+                                name="rulesAccepted"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Acepto el reglamento oficial
+                                de MOVE HYBRID GAMES. *
+                            </span>
+
+                        </label>
+
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="imageAccepted"
+                                name="imageAccepted"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Autorizo el uso de mi imagen
+                                durante el evento. *
+                            </span>
+
+                        </label>
+
+
+                        <label class="checkbox-label">
+
+                            <input
+                                type="checkbox"
+                                id="dataAccepted"
+                                name="dataAccepted"
+                                required
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Declaro que la información
+                                proporcionada es correcta. *
+                            </span>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     BOTÓN
+                ================================== -->
+
+                <div class="registration-submit">
+
+                    <button
+                        type="submit"
+                        class="registration-button"
+                        id="registrationSubmit"
+                    >
+
+                        <span>
+                            ENVIAR INSCRIPCIÓN
+                        </span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p class="required-note">
+                        * Campos obligatorios
+                    </p>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div
+                    class="registration-message"
+                    id="registrationMessage"
+                ></div>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
