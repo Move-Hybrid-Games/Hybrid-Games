@@ -566,3 +566,215 @@ console.log(
     "color:#16d5f4;font-size:13px;font-weight:bold;"
 );
 
+/* =========================================================
+   FORMULARIO DE INSCRIPCIÓN
+   ENVÍO A EMAIL
+========================================================= */
+
+const registrationForm =
+    document.getElementById("registrationForm");
+
+const registrationMessage =
+    document.getElementById("registrationMessage");
+
+const registrationSubmit =
+    document.getElementById("registrationSubmit");
+
+
+if (registrationForm) {
+
+    registrationForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            /*
+               Evitamos que el navegador
+               recargue o abandone la página.
+            */
+
+            event.preventDefault();
+
+
+            /*
+               Validación HTML nativa.
+            */
+
+            if (!registrationForm.checkValidity()) {
+
+                registrationForm.reportValidity();
+
+                return;
+
+            }
+
+
+            /*
+               Estado del botón.
+            */
+
+            registrationSubmit.disabled = true;
+
+            registrationSubmit.querySelector(
+                "span:first-child"
+            ).textContent = "ENVIANDO INSCRIPCIÓN...";
+
+
+            /*
+               Ocultamos mensaje anterior.
+            */
+
+            registrationMessage.classList.remove(
+                "active"
+            );
+
+            registrationMessage.textContent = "";
+
+
+            /*
+               Convertimos todos los campos
+               del formulario en FormData.
+            */
+
+            const formData =
+                new FormData(registrationForm);
+
+
+            /*
+               FormSubmit necesita que
+               los datos sean enviados a su endpoint.
+            */
+
+            try {
+
+                const response =
+                    await fetch(
+                        "https://formsubmit.co/ajax/movebolivia.scz@gmail.com",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Accept":
+                                    "application/json"
+                            },
+
+                            body: formData
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                /*
+                   SI TODO SALIÓ BIEN
+                */
+
+                if (
+                    response.ok &&
+                    result.success
+                ) {
+
+                    registrationMessage.textContent =
+                        "¡Inscripción enviada correctamente! Hemos recibido tus datos. Revisa tu correo si necesitas confirmar la información.";
+
+                    registrationMessage.classList.add(
+                        "active"
+                    );
+
+
+                    /*
+                       Limpiamos formulario.
+                    */
+
+                    registrationForm.reset();
+
+
+                    /*
+                       Regresamos el botón
+                       a su estado original.
+                    */
+
+                    registrationSubmit.disabled = false;
+
+                    registrationSubmit.querySelector(
+                        "span:first-child"
+                    ).textContent =
+                        "ENVIAR INSCRIPCIÓN";
+
+
+                    /*
+                       Llevamos al usuario
+                       hacia el mensaje.
+                    */
+
+                    registrationMessage.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+
+                    /*
+                       Ocultamos el mensaje
+                       después de unos segundos.
+                    */
+
+                    setTimeout(
+                        () => {
+
+                            registrationMessage.classList.remove(
+                                "active"
+                            );
+
+                        },
+                        8000
+                    );
+
+                }
+
+                /*
+                   SI HUBO ERROR
+                */
+
+                else {
+
+                    throw new Error(
+                        result.message ||
+                        "No se pudo enviar la inscripción."
+                    );
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Error al enviar inscripción:",
+                    error
+                );
+
+
+                registrationMessage.textContent =
+                    "No pudimos enviar la inscripción. Por favor, intenta nuevamente.";
+
+                registrationMessage.classList.add(
+                    "active"
+                );
+
+
+                registrationSubmit.disabled =
+                    false;
+
+
+                registrationSubmit.querySelector(
+                    "span:first-child"
+                ).textContent =
+                    "ENVIAR INSCRIPCIÓN";
+
+            }
+
+        }
+    );
+
+}
