@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -16,13 +17,16 @@
 
   <meta
     name="description"
-    content="Reglamento oficial MOVE HYBRID GAMES 2026."
+    content="Reglamento Oficial MOVE HYBRID GAMES 2026."
   >
 
   <title>REGLAMENTO | MOVE HYBRID GAMES</title>
 
+
   <!-- GOOGLE FONT -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
@@ -34,29 +38,650 @@
     rel="stylesheet"
   >
 
+
   <!-- CSS PRINCIPAL -->
+
   <link rel="stylesheet" href="style.css">
+
+
+  <!-- ==========================================
+       ESTILOS EXCLUSIVOS DEL REGLAMENTO
+  =========================================== -->
+
+  <style>
+
+    /* ==========================================
+       BASE
+    =========================================== */
+
+    .reglamento-page {
+      width: 100%;
+      min-height: 100vh;
+      padding-top: 150px;
+      padding-bottom: 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* ==========================================
+       HERO DEL REGLAMENTO
+    =========================================== */
+
+    .reglamento-hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      text-align: center;
+    }
+
+
+    .reglamento-kicker {
+      display: inline-block;
+      margin-bottom: 18px;
+
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 5px;
+
+      color: #087cff;
+    }
+
+
+    .reglamento-hero h1 {
+      margin: 0;
+
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: .95;
+
+      font-weight: 900;
+      letter-spacing: -3px;
+
+      color: #f4f7ff;
+    }
+
+
+    .reglamento-hero h1 span {
+      color: #087cff;
+    }
+
+
+    .reglamento-intro {
+      max-width: 850px;
+      margin: 25px auto 0;
+
+      font-size: 18px;
+      line-height: 1.7;
+
+      color: #c9d2e4;
+    }
+
+
+    /* ==========================================
+       BLOQUE DESCARGA
+    =========================================== */
+
+    .reglamento-download {
+      margin: 55px auto 80px;
+
+      max-width: 1000px;
+
+      padding: 42px;
+
+      border: 1px solid rgba(0, 119, 255, .45);
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 100, 255, .16),
+          rgba(5, 10, 25, .88)
+        );
+
+      box-shadow:
+        0 20px 70px rgba(0, 0, 0, .35),
+        inset 0 0 40px rgba(0, 100, 255, .04);
+    }
+
+
+    .download-label {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+
+      color: #087cff;
+    }
+
+
+    .reglamento-download h2 {
+      margin: 0;
+
+      font-size: clamp(25px, 4vw, 42px);
+      line-height: 1.1;
+
+      font-weight: 900;
+
+      color: #ffffff;
+    }
+
+
+    .reglamento-download p {
+      max-width: 760px;
+
+      margin: 18px auto 30px;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #bfc9dc;
+    }
+
+
+    /* ==========================================
+       BOTONES
+    =========================================== */
+
+    .reglamento-buttons {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .reglamento-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 58px;
+
+      padding: 0 30px;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-family: inherit;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+
+    .reglamento-btn:hover {
+      transform: translateY(-3px);
+    }
+
+
+    .reglamento-btn--primary {
+      color: #ffffff;
+
+      background: linear-gradient(
+        135deg,
+        #087cff,
+        #0047bd
+      );
+
+      box-shadow:
+        0 12px 35px rgba(0, 102, 255, .28);
+    }
+
+
+    .reglamento-btn--secondary {
+      color: #087cff;
+
+      border: 1px solid rgba(0, 119, 255, .7);
+
+      background: rgba(0, 30, 70, .22);
+    }
+
+
+    .reglamento-btn-icon {
+      margin-left: 14px;
+
+      font-size: 20px;
+    }
+
+
+    /* ==========================================
+       DOCUMENTO
+    =========================================== */
+
+    .reglamento-document {
+      width: min(1000px, calc(100% - 40px));
+
+      margin: 0 auto;
+
+      padding: 65px 75px;
+
+      border-radius: 30px;
+
+      background: rgba(7, 12, 27, .92);
+
+      border: 1px solid rgba(105, 130, 180, .20);
+
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, .38);
+
+      text-align: left;
+    }
+
+
+    .document-top {
+      text-align: center;
+
+      padding-bottom: 40px;
+
+      margin-bottom: 45px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.10);
+    }
+
+
+    .document-top small {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #087cff;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 4px;
+    }
+
+
+    .document-top h2 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size: clamp(28px, 4vw, 46px);
+
+      font-weight: 900;
+    }
+
+
+    .document-top p {
+      margin-top: 12px;
+
+      color: #8f9bb0;
+
+      font-size: 14px;
+    }
+
+
+    /* ==========================================
+       ARTÍCULOS
+    =========================================== */
+
+    .reglamento-article {
+      margin-bottom: 42px;
+    }
+
+
+    .reglamento-article:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .reglamento-article h3 {
+      display: flex;
+
+      align-items: baseline;
+
+      gap: 12px;
+
+      margin: 0 0 15px;
+
+      color: #ffffff;
+
+      font-size: 22px;
+      line-height: 1.3;
+
+      font-weight: 900;
+    }
+
+
+    .article-number {
+      color: #087cff;
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      white-space: nowrap;
+    }
+
+
+    .reglamento-article p {
+      margin: 0 0 13px;
+
+      color: #c8d0df;
+
+      font-size: 15px;
+
+      line-height: 1.85;
+    }
+
+
+    .reglamento-article ul,
+    .reglamento-article ol {
+      margin: 15px 0 0;
+
+      padding-left: 25px;
+    }
+
+
+    .reglamento-article li {
+      margin-bottom: 9px;
+
+      color: #c8d0df;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+    }
+
+
+    .reglamento-article li::marker {
+      color: #087cff;
+    }
+
+
+    /* ==========================================
+       DESTACADOS
+    =========================================== */
+
+    .reglamento-highlight {
+      margin: 25px 0;
+
+      padding: 20px 25px;
+
+      border-left: 3px solid #087cff;
+
+      border-radius: 0 12px 12px 0;
+
+      background: rgba(0, 100, 255, .07);
+    }
+
+
+    .reglamento-highlight p {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-weight: 600;
+    }
+
+
+    /* ==========================================
+       TABLAS
+    =========================================== */
+
+    .reglamento-table-wrapper {
+      width: 100%;
+
+      overflow-x: auto;
+
+      margin: 25px 0;
+    }
+
+
+    .reglamento-table {
+      width: 100%;
+
+      border-collapse: collapse;
+
+      min-width: 420px;
+    }
+
+
+    .reglamento-table th,
+    .reglamento-table td {
+      padding: 14px 16px;
+
+      text-align: left;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+      font-size: 14px;
+    }
+
+
+    .reglamento-table th {
+      color: #087cff;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      background: rgba(0, 100, 255, .08);
+    }
+
+
+    .reglamento-table td {
+      color: #d1d8e5;
+    }
+
+
+    .reglamento-table tr:hover td {
+      background: rgba(255,255,255,.025);
+    }
+
+
+    /* ==========================================
+       ANEXOS
+    =========================================== */
+
+    .reglamento-annex {
+      margin-top: 75px;
+
+      padding-top: 50px;
+
+      border-top:
+        1px solid rgba(255,255,255,.10);
+    }
+
+
+    .reglamento-annex-title {
+      margin-bottom: 35px;
+    }
+
+
+    .reglamento-annex-title span {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: #087cff;
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      letter-spacing: 4px;
+    }
+
+
+    .reglamento-annex-title h3 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size: 32px;
+
+      font-weight: 900;
+    }
+
+
+    /* ==========================================
+       FIRMA / ACEPTACIÓN
+    =========================================== */
+
+    .reglamento-signature {
+      margin-top: 60px;
+
+      padding: 35px;
+
+      text-align: center;
+
+      border-radius: 20px;
+
+      border: 1px solid rgba(0, 119, 255, .35);
+
+      background: rgba(0, 65, 160, .08);
+    }
+
+
+    .reglamento-signature h3 {
+      margin: 0 0 12px;
+
+      color: #ffffff;
+
+      font-size: 25px;
+
+      font-weight: 900;
+    }
+
+
+    .reglamento-signature p {
+      margin: 0;
+
+      color: #aeb9cc;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* ==========================================
+       RESPONSIVE
+    =========================================== */
+
+    @media (max-width: 900px) {
+
+      .reglamento-page {
+        padding-top: 125px;
+      }
+
+      .reglamento-document {
+        padding: 45px 35px;
+      }
+
+      .reglamento-download {
+        padding: 35px 25px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .reglamento-page {
+        padding-top: 110px;
+      }
+
+      .reglamento-hero {
+        width: calc(100% - 28px);
+      }
+
+      .reglamento-hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .reglamento-intro {
+        font-size: 15px;
+      }
+
+      .reglamento-download {
+        margin-top: 40px;
+        padding: 30px 20px;
+        border-radius: 22px;
+      }
+
+      .reglamento-download h2 {
+        font-size: 26px;
+      }
+
+      .reglamento-buttons {
+        flex-direction: column;
+      }
+
+      .reglamento-btn {
+        width: 100%;
+        padding: 0 18px;
+      }
+
+      .reglamento-document {
+        width: calc(100% - 28px);
+        padding: 35px 22px;
+        border-radius: 20px;
+      }
+
+      .reglamento-article h3 {
+        font-size: 19px;
+      }
+
+      .reglamento-article p,
+      .reglamento-article li {
+        font-size: 14px;
+      }
+
+      .reglamento-annex-title h3 {
+        font-size: 27px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 
 <body>
 
+
   <!-- ==========================================
-       EFECTOS DE LUZ DEL FONDO
+       EFECTOS DE FONDO
   =========================================== -->
 
   <div class="page-glow page-glow--one"></div>
+
   <div class="page-glow page-glow--two"></div>
 
 
   <!-- ==========================================
-       HEADER / NAVBAR
+       NAVBAR
   =========================================== -->
 
   <header class="site-header">
 
     <div class="nav-shell">
+
 
       <!-- LOGO -->
 
@@ -80,7 +705,7 @@
       </a>
 
 
-      <!-- BOTÓN MOBILE -->
+      <!-- MOBILE -->
 
       <button
         class="menu-toggle"
@@ -96,7 +721,7 @@
       </button>
 
 
-      <!-- MENÚ -->
+      <!-- NAV -->
 
       <nav
         class="main-nav"
@@ -139,12 +764,12 @@
       </nav>
 
 
-      <!-- BOTÓN PERFIL -->
+      <!-- PERFIL / INSCRIPCIÓN -->
 
       <a
         class="profile-button"
         href="inscribirme.html"
-        aria-label="Perfil"
+        aria-label="Inscribirme"
       >
 
         <svg
@@ -173,47 +798,52 @@
 
 
   <!-- ==========================================
-       CONTENIDO
+       CONTENIDO PRINCIPAL
   =========================================== -->
 
   <main class="reglamento-page">
 
 
     <!-- ==========================================
-         CABECERA DEL REGLAMENTO
+         HERO
     =========================================== -->
 
     <section class="reglamento-hero">
 
-      <span class="section-kicker">
+      <span class="reglamento-kicker">
         MOVE HYBRID GAMES 2026
       </span>
+
 
       <h1>
         REGLAMENTO
         <br>
-        <em>OFICIAL</em>
+        <span>OFICIAL</span>
       </h1>
 
-      <p>
+
+      <p class="reglamento-intro">
         Toda la información, normas y condiciones
         que debes conocer antes de competir.
       </p>
 
 
-      <!-- ==========================================
-           DESCARGA Y FIRMA
-      =========================================== -->
+
+      <!-- ========================================
+           DESCARGA
+      ========================================= -->
 
       <div class="reglamento-download">
 
-        <span class="download-kicker">
+        <span class="download-label">
           DOCUMENTO OFICIAL
         </span>
+
 
         <h2>
           DESCARGA Y FIRMA EL REGLAMENTO
         </h2>
+
 
         <p>
           Antes de participar en MOVE HYBRID GAMES,
@@ -225,39 +855,37 @@
 
         <div class="reglamento-buttons">
 
-          <!-- DESCARGAR PDF -->
 
           <a
-            href="reglamento.pdf"
+            href="Reglamento_Oficial_MOVE_HYBRID_GAMES.pdf"
             download
-            class="btn btn-primary"
+            class="reglamento-btn reglamento-btn--primary"
           >
-            <span>
-              DESCARGAR REGLAMENTO PDF
-            </span>
 
-            <span class="download-icon">
+            DESCARGAR REGLAMENTO PDF
+
+            <span class="reglamento-btn-icon">
               ↓
             </span>
+
           </a>
 
-
-          <!-- ABRIR PDF -->
 
           <a
-            href="reglamento.pdf"
+            href="Reglamento_Oficial_MOVE_HYBRID_GAMES.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary"
+            class="reglamento-btn reglamento-btn--secondary"
           >
-            <span>
-              ABRIR REGLAMENTO
-            </span>
 
-            <span>
+            ABRIR REGLAMENTO
+
+            <span class="reglamento-btn-icon">
               →
             </span>
+
           </a>
+
 
         </div>
 
@@ -268,107 +896,1181 @@
 
 
     <!-- ==========================================
-         REGLAMENTO TEXTUAL
+         DOCUMENTO
     =========================================== -->
 
-    <section class="reglamento-content">
+    <section class="reglamento-document">
 
-      <div class="reglamento-header">
 
-        <span class="section-kicker">
-          REGLAMENTO
-        </span>
+      <div class="document-top">
+
+        <small>
+          DOCUMENTO OFICIAL
+        </small>
 
         <h2>
-          NORMATIVA OFICIAL
+          MOVE HYBRID GAMES 2026
         </h2>
+
+        <p>
+          Reglamento Oficial de Competencia
+        </p>
 
       </div>
 
 
+
       <!-- ========================================
-           AQUÍ VA EL TEXTO DEL REGLAMENTO
+           1. DISPOSICIONES GENERALES
       ========================================= -->
 
-      <article class="reglamento-document">
+      <article class="reglamento-article">
 
-        <h3>1. OBJETIVO DE LA COMPETENCIA</h3>
+        <h3>
+          <span class="article-number">01</span>
+          DISPOSICIONES GENERALES
+        </h3>
 
         <p>
-          Aquí irá el texto oficial correspondiente
-          al objetivo de la competencia.
+          MOVE HYBRID GAMES es una competencia de
+          entrenamiento híbrido organizada por el gimnasio
+          MOVE, cuyo objetivo es promover el deporte,
+          el trabajo en equipo, el respeto y el desarrollo
+          del fitness funcional mediante pruebas que
+          combinan carrera y ejercicios funcionales.
         </p>
 
+        <div class="reglamento-highlight">
 
-        <h3>2. PARTICIPACIÓN</h3>
+          <p>
+            La inscripción de cada atleta implica la
+            aceptación total del presente reglamento.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           2. FECHA Y LUGAR
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">02</span>
+          FECHA Y LUGAR
+        </h3>
 
         <p>
-          Aquí irá el texto oficial correspondiente
-          a los requisitos de participación.
+          <strong>Fecha:</strong> 03 de octubre de 2026.
         </p>
 
-
-        <h3>3. CATEGORÍAS</h3>
-
         <p>
-          Aquí irá la información oficial de las
-          categorías disponibles en MOVE HYBRID GAMES.
+          <strong>Lugar:</strong> Gimnasio MOVE - Go Padel
         </p>
 
-
-        <h3>4. FORMATO DE LA COMPETENCIA</h3>
-
         <p>
-          Aquí irá el formato oficial de la competencia,
-          pruebas, heats y sistema de participación.
-        </p>
-
-
-        <h3>5. NORMAS GENERALES</h3>
-
-        <p>
-          Aquí irá el reglamento general que deberán
-          cumplir todos los atletas.
-        </p>
-
-
-        <h3>6. JUECES Y PENALIZACIONES</h3>
-
-        <p>
-          Aquí irá la información oficial relacionada
-          con jueces, repeticiones y penalizaciones.
-        </p>
-
-
-        <h3>7. SEGURIDAD</h3>
-
-        <p>
-          Aquí irá la normativa relacionada con la
-          seguridad de los participantes.
-        </p>
-
-
-        <h3>8. RESPONSABILIDADES DEL ATLETA</h3>
-
-        <p>
-          Aquí irá el texto oficial sobre las
-          responsabilidades de cada participante.
-        </p>
-
-
-        <h3>9. ACEPTACIÓN DEL REGLAMENTO</h3>
-
-        <p>
-          La inscripción y participación en MOVE HYBRID
-          GAMES implica la aceptación de las normas,
-          condiciones y disposiciones establecidas por
-          la organización.
+          El comité organizador podrá modificar horarios
+          o programación por razones climáticas, logísticas
+          o de seguridad.
         </p>
 
       </article>
 
-    </section>
 
+
+      <!-- ========================================
+           3. MODALIDADES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">03</span>
+          MODALIDADES
+        </h3>
+
+        <p>
+          La competencia será exclusivamente en duplas.
+        </p>
+
+        <ul>
+          <li>Duplas Mujeres</li>
+          <li>Duplas Hombres</li>
+          <li>Duplas Mixtas</li>
+        </ul>
+
+      </article>
+
+
+
+      <!-- ========================================
+           4. CATEGORÍAS
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">04</span>
+          CATEGORÍAS
+        </h3>
+
+        <p>
+          <strong>OPEN</strong><br>
+          Dirigida a atletas de nivel intermedio.
+        </p>
+
+        <p>
+          <strong>PRO</strong><br>
+          Dirigida a atletas con experiencia competitiva
+          y alto nivel físico.
+        </p>
+
+        <p>
+          <strong>+45</strong><br>
+          Dirigida a atletas mayores de 45 años.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           5. INSCRIPCIONES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">05</span>
+          INSCRIPCIONES
+        </h3>
+
+        <p>
+          La inscripción será válida únicamente cuando:
+        </p>
+
+        <ul>
+          <li>Se complete el formulario oficial.</li>
+          <li>Se firme el deslinde de responsabilidades.</li>
+          <li>Se realice el pago correspondiente.</li>
+          <li>Se entregue la documentación solicitada.</li>
+        </ul>
+
+        <div class="reglamento-highlight">
+
+          <p>
+            No existirán devoluciones por inasistencia.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           6. IDENTIFICACIÓN
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">06</span>
+          IDENTIFICACIÓN
+        </h3>
+
+        <p>
+          Todos los atletas deberán:
+        </p>
+
+        <ul>
+          <li>Presentar documento de identidad.</li>
+          <li>Utilizar el número oficial entregado por la organización.</li>
+          <li>Competir con la indumentaria deportiva adecuada.</li>
+        </ul>
+
+      </article>
+
+
+
+      <!-- ========================================
+           7. FORMATO DE COMPETENCIA
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">07</span>
+          FORMATO DE COMPETENCIA
+        </h3>
+
+        <h4>Ronda Clasificatoria</h4>
+
+        <p><strong>Categoría PRO</strong></p>
+
+        <ul>
+          <li>WOD AMRAP</li>
+          <li>2 km Running</li>
+        </ul>
+
+        <p><strong>Categoría OPEN</strong></p>
+
+        <ul>
+          <li>WOD AMRAP</li>
+          <li>1 km Running</li>
+        </ul>
+
+        <p><strong>Categoría +45</strong></p>
+
+        <ul>
+          <li>WOD AMRAP</li>
+          <li>1 km Running</li>
+        </ul>
+
+        <p>
+          Clasificarán a la ronda final las mejores duplas
+          de cada categoría según el cupo establecido
+          por la organización.
+        </p>
+
+        <h4>Ronda Final</h4>
+
+        <p>
+          Las rutinas finales serán publicadas una semana
+          antes del evento a través de los canales oficiales
+          de la organización.
+        </p>
+
+        <p>
+          Pasarán a la ronda final los 3 mejores puntajes
+          de la ronda clasificatoria. El ranking será
+          determinado según el sistema oficial de puntuación.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           8. WODS
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">08</span>
+          WODS
+        </h3>
+
+        <p>
+          Todos los WODs serán explicados durante el
+          briefing técnico.
+        </p>
+
+        <p>
+          Cada atleta deberá cumplir exactamente el
+          estándar de movimiento establecido.
+        </p>
+
+        <p>
+          Las repeticiones que no cumplan el estándar
+          serán consideradas <strong>NO REP</strong>.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           9. ESTÁNDARES DE MOVIMIENTO
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">09</span>
+          ESTÁNDARES DE MOVIMIENTO
+        </h3>
+
+        <p>
+          Cada ejercicio contará con un estándar técnico oficial.
+        </p>
+
+        <p>
+          El juez podrá invalidar cualquier repetición incorrecta.
+        </p>
+
+        <p>
+          No se aceptarán discusiones durante la ejecución del WOD.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           10. JUECES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">10</span>
+          JUECES
+        </h3>
+
+        <p>
+          Cada dupla tendrá un juez asignado.
+        </p>
+
+        <p>Las funciones del juez son:</p>
+
+        <ul>
+          <li>Contabilizar repeticiones.</li>
+          <li>Validar movimientos.</li>
+          <li>Registrar tiempos.</li>
+          <li>Aplicar penalizaciones.</li>
+        </ul>
+
+        <div class="reglamento-highlight">
+
+          <p>
+            Las decisiones del juez durante la competencia
+            son definitivas.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ========================================
+           11. SISTEMA DE PUNTUACIÓN
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">11</span>
+          SISTEMA DE PUNTUACIÓN
+        </h3>
+
+        <p>
+          Cada prueba otorgará puntos según la posición obtenida.
+          Revisar el anexo 2.
+        </p>
+
+        <p>
+          El campeón será quien acumule la mayor cantidad de puntos.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           12. EMPATES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">12</span>
+          EMPATES
+        </h3>
+
+        <p>
+          En caso de empate se considerará:
+        </p>
+
+        <ol>
+          <li>Mejor resultado en la ronda final.</li>
+        </ol>
+
+      </article>
+
+
+
+      <!-- ========================================
+           13. PENALIZACIONES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">13</span>
+          PENALIZACIONES
+        </h3>
+
+        <p>
+          Serán motivo de penalización:
+        </p>
+
+        <ul>
+          <li>No cumplir el estándar del movimiento.</li>
+          <li>Salida antes de la señal.</li>
+          <li>Obstaculizar a otros competidores.</li>
+          <li>Conducta antideportiva.</li>
+          <li>Uso de ayuda externa.</li>
+          <li>Recibir asistencia física no autorizada.</li>
+          <li>Incumplir instrucciones del juez.</li>
+        </ul>
+
+        <p>
+          Las penalizaciones podrán consistir en:
+        </p>
+
+        <ul>
+          <li>No Rep</li>
+          <li>Tiempo adicional</li>
+          <li>Pérdida de puntos</li>
+          <li>Descalificación</li>
+        </ul>
+
+      </article>
+
+
+
+      <!-- ========================================
+           14. DESCALIFICACIÓN
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">14</span>
+          DESCALIFICACIÓN
+        </h3>
+
+        <p>
+          Será descalificado quien:
+        </p>
+
+        <ul>
+          <li>Falsifique información.</li>
+          <li>Sustituya a un integrante de la dupla.</li>
+          <li>Agreda verbal o físicamente a jueces, atletas o staff.</li>
+          <li>Dañe el equipamiento.</li>
+          <li>Haga trampa deliberadamente.</li>
+          <li>Consuma sustancias prohibidas durante la competencia.</li>
+          <li>Incumpla reiteradamente el reglamento.</li>
+        </ul>
+
+      </article>
+
+
+
+      <!-- ========================================
+           15. SEGURIDAD
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">15</span>
+          SEGURIDAD
+        </h3>
+
+        <p>
+          Cada atleta participa bajo su propia responsabilidad.
+        </p>
+
+        <p>
+          La organización dispondrá de primeros auxilios
+          durante el evento.
+        </p>
+
+        <p>
+          MOVE no será responsable por lesiones derivadas
+          de enfermedades preexistentes, negligencia del atleta
+          o incumplimiento del reglamento.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           16. USO DE IMAGEN
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">16</span>
+          USO DE IMAGEN
+        </h3>
+
+        <p>
+          La inscripción autoriza a MOVE a utilizar fotografías
+          y videos capturados durante el evento para fines
+          publicitarios, promocionales e institucionales
+          sin compensación económica.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           17. RECLAMOS
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">17</span>
+          RECLAMOS
+        </h3>
+
+        <p>
+          Los reclamos únicamente podrán ser presentados
+          por el capitán de la dupla.
+        </p>
+
+        <p>
+          Deberán realizarse dentro de los 15 minutos
+          posteriores a la finalización del WOD.
+        </p>
+
+        <p>
+          No se aceptarán reclamos una vez publicados
+          los resultados oficiales.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           18. EQUIPAMIENTO
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">18</span>
+          EQUIPAMIENTO
+        </h3>
+
+        <p>
+          No está permitido modificar ni alterar
+          el equipamiento oficial.
+        </p>
+
+        <p>
+          Todo el material será proporcionado por la organización.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           19. CÓDIGO DE CONDUCTA
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">19</span>
+          CÓDIGO DE CONDUCTA
+        </h3>
+
+        <p>
+          Se espera que todos los participantes y sus
+          equipos/familiares/amigos mantengan una actitud
+          de respeto hacia:
+        </p>
+
+        <ul>
+          <li>Atletas</li>
+          <li>Jueces</li>
+          <li>Staff</li>
+          <li>Público</li>
+          <li>Auspiciadores</li>
+        </ul>
+
+        <p>
+          El espíritu deportivo debe prevalecer durante
+          toda la competencia.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           20. MODIFICACIONES
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">20</span>
+          MODIFICACIONES
+        </h3>
+
+        <p>
+          La organización se reserva el derecho de modificar:
+        </p>
+
+        <ul>
+          <li>Horarios</li>
+          <li>Cronograma</li>
+        </ul>
+
+        <p>
+          cuando existan razones de seguridad, logística
+          o fuerza mayor.
+        </p>
+
+      </article>
+
+
+
+      <!-- ========================================
+           21. ACEPTACIÓN
+      ========================================= -->
+
+      <article class="reglamento-article">
+
+        <h3>
+          <span class="article-number">21</span>
+          ACEPTACIÓN
+        </h3>
+
+        <div class="reglamento-highlight">
+
+          <p>
+            La inscripción implica la aceptación total
+            del presente reglamento.
+          </p>
+
+        </div>
+
+        <p>
+          Todos los atletas declaran haber leído y comprendido
+          estas normas antes de participar.
+        </p>
+
+      </article>
+
+
+
+      <!-- ==========================================
+           ANEXOS
+      =========================================== -->
+
+      <div class="reglamento-annex">
+
+        <div class="reglamento-annex-title">
+
+          <span>
+            ANEXOS
+          </span>
+
+          <h3>
+            DOCUMENTACIÓN COMPLEMENTARIA
+          </h3>
+
+        </div>
+
+
+
+        <!-- ========================================
+             ANEXO 1
+        ========================================= -->
+
+        <article class="reglamento-article">
+
+          <h3>
+            <span class="article-number">A1</span>
+            MANUAL DE ESTÁNDARES DE MOVIMIENTO
+          </h3>
+
+          <p>
+            Revisar el video correspondiente en la página
+            oficial del evento en Instagram
+            <strong>@move.hybridgames</strong>
+          </p>
+
+        </article>
+
+
+
+        <!-- ========================================
+             ANEXO 2
+        ========================================= -->
+
+        <article class="reglamento-article">
+
+          <h3>
+            <span class="article-number">A2</span>
+            SISTEMA OFICIAL DE PUNTUACIÓN
+          </h3>
+
+          <p>
+            El presente anexo establece el sistema oficial
+            de puntuación que será utilizado durante
+            MOVE HYBRID GAMES 2026 y forma parte integral
+            del Reglamento Oficial de la competencia.
+          </p>
+
+
+          <h4>
+            1. RONDA CLASIFICATORIA
+          </h4>
+
+          <p>
+            La puntuación de la ronda clasificatoria estará
+            compuesta por dos segmentos:
+          </p>
+
+          <ol>
+            <li>AMRAP</li>
+            <li>RUN</li>
+          </ol>
+
+          <p>
+            La puntuación obtenida en ambos segmentos será acumulativa.
+          </p>
+
+
+          <h4>
+            1.1 PUNTUACIÓN DEL AMRAP
+          </h4>
+
+          <p>
+            El AMRAP tendrá una duración de 8 minutos.
+          </p>
+
+          <div class="reglamento-highlight">
+
+            <p>
+              Por cada serie completa finalizada,
+              la dupla recibirá: 90 puntos.
+            </p>
+
+          </div>
+
+          <p>
+            La puntuación se calculará de acuerdo con el número
+            total de series completas realizadas dentro del
+            tiempo establecido.
+          </p>
+
+
+          <div class="reglamento-table-wrapper">
+
+            <table class="reglamento-table">
+
+              <thead>
+
+                <tr>
+                  <th>Series completas</th>
+                  <th>Puntos</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1</td>
+                  <td>90</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>180</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>270</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>360</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <p>
+            <strong>Importante:</strong> Si la última serie de la
+            dupla quedó incompleta, se sumará al puntaje la cantidad
+            de repeticiones realizadas de cada ejercicio (excepto
+            los ejercicios por distancia: estocadas, burpee
+            broadjumps y farmer carry).
+          </p>
+
+
+          <p>
+            <strong>Ejemplo:</strong>
+            2 series completas + 15 sentadillas (3era serie)
+            = 90 puntos + 15 puntos.
+          </p>
+
+
+          <div class="reglamento-highlight">
+
+            <p>
+              Puntaje total AMRAP = 105 puntos
+            </p>
+
+          </div>
+
+
+
+          <h4>
+            1.2 PUNTUACIÓN DEL RUN
+          </h4>
+
+          <p>
+            La clasificación del segmento de running otorgará
+            puntos de acuerdo con el orden de llegada.
+          </p>
+
+
+          <div class="reglamento-table-wrapper">
+
+            <table class="reglamento-table">
+
+              <thead>
+
+                <tr>
+                  <th>Posición</th>
+                  <th>Puntos</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr><td>1.º</td><td>100 puntos</td></tr>
+                <tr><td>2.º</td><td>90 puntos</td></tr>
+                <tr><td>3.º</td><td>80 puntos</td></tr>
+                <tr><td>4.º</td><td>70 puntos</td></tr>
+                <tr><td>5.º</td><td>60 puntos</td></tr>
+                <tr><td>6.º</td><td>50 puntos</td></tr>
+                <tr><td>7.º</td><td>40 puntos</td></tr>
+                <tr><td>8.º</td><td>30 puntos</td></tr>
+                <tr><td>9.º</td><td>20 puntos</td></tr>
+                <tr><td>10.º y siguientes</td><td>10 puntos</td></tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <p>
+            A partir de la décima posición, todas las duplas
+            recibirán 10 puntos.
+          </p>
+
+          <p>
+            La posición será determinada por el orden oficial
+            de llegada, validado por los jueces y staff
+            responsables del segmento de running.
+          </p>
+
+
+
+          <h4>
+            1.3 PUNTUACIÓN TOTAL DE LA RONDA CLASIFICATORIA
+          </h4>
+
+          <div class="reglamento-highlight">
+
+            <p>
+              PUNTOS AMRAP + PUNTOS RUN =
+              PUNTUACIÓN TOTAL
+            </p>
+
+          </div>
+
+          <p>
+            La suma determinará la posición de cada dupla
+            en el ranking clasificatorio.
+          </p>
+
+          <p>
+            El ranking será utilizado para determinar las
+            duplas que avanzan a la ronda final, de acuerdo
+            con el número de clasificados establecido
+            previamente por la organización.
+          </p>
+
+
+
+          <h4>
+            2. RONDA FINAL
+          </h4>
+
+          <p>
+            La ronda final contará con un sistema de
+            puntuación independiente.
+          </p>
+
+
+          <div class="reglamento-table-wrapper">
+
+            <table class="reglamento-table">
+
+              <thead>
+
+                <tr>
+                  <th>Posición</th>
+                  <th>Puntos</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>1.º lugar</td>
+                  <td>300 puntos</td>
+                </tr>
+
+                <tr>
+                  <td>2.º lugar</td>
+                  <td>200 puntos</td>
+                </tr>
+
+                <tr>
+                  <td>3.º lugar</td>
+                  <td>100 puntos</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <p>
+            Estos puntos determinarán las posiciones
+            correspondientes de la ronda final.
+          </p>
+
+
+
+          <h4>
+            3. PUNTUACIÓN DEFINITIVA
+          </h4>
+
+          <div class="reglamento-highlight">
+
+            <p>
+              PUNTUACIÓN DEFINITIVA =
+              Puntuación ronda clasificatoria +
+              Puntuación ronda final
+            </p>
+
+          </div>
+
+          <p>
+            La puntuación definitiva definirá al campeón
+            y subcampeón de cada categoría.
+          </p>
+
+
+
+          <h4>
+            4. VALIDACIÓN DE RESULTADOS
+          </h4>
+
+          <p>
+            Todos los resultados estarán sujetos a la
+            validación de los jueces oficiales de
+            MOVE HYBRID GAMES 2026.
+          </p>
+
+          <p>
+            La organización tendrá la autoridad para:
+          </p>
+
+          <ul>
+            <li>Validar las repeticiones realizadas.</li>
+            <li>Confirmar las series completas.</li>
+            <li>Verificar el orden de llegada en el running.</li>
+            <li>Registrar y consolidar las puntuaciones.</li>
+            <li>Resolver cualquier incidencia relacionada con la contabilización de resultados.</li>
+          </ul>
+
+          <p>
+            La puntuación oficial será la registrada y validada
+            por el equipo de jueces y la organización.
+          </p>
+
+
+
+          <h4>
+            5. DISPOSICIÓN FINAL
+          </h4>
+
+          <p>
+            La participación en MOVE HYBRID GAMES 2026 implica
+            la aceptación de este sistema oficial de puntuación
+            y de las decisiones tomadas por los jueces dentro
+            de sus competencias.
+          </p>
+
+        </article>
+
+
+
+        <!-- ========================================
+             ANEXO 3
+        ========================================= -->
+
+        <article class="reglamento-article">
+
+          <h3>
+            <span class="article-number">A3</span>
+            CRONOGRAMA OFICIAL DEL EVENTO
+          </h3>
+
+          <p>
+            <strong>MOVE HYBRID GAMES 2026</strong>
+          </p>
+
+          <p>
+            <strong>Fecha:</strong> 03 de octubre de 2026
+          </p>
+
+
+          <div class="reglamento-table-wrapper">
+
+            <table class="reglamento-table">
+
+              <thead>
+
+                <tr>
+                  <th>Hora</th>
+                  <th>Actividad</th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>07:00 AM</td>
+                  <td>Inauguración y bienvenida</td>
+                </tr>
+
+                <tr>
+                  <td>07:30 AM</td>
+                  <td>Ronda clasificatoria – Categoría OPEN</td>
+                </tr>
+
+                <tr>
+                  <td>08:30 AM</td>
+                  <td>Ronda clasificatoria – Categoría +45</td>
+                </tr>
+
+                <tr>
+                  <td>09:30 AM</td>
+                  <td>Ronda clasificatoria – Categoría PRO</td>
+                </tr>
+
+                <tr>
+                  <td>10:30 AM</td>
+                  <td>Ronda final – Categoría OPEN</td>
+                </tr>
+
+                <tr>
+                  <td>11:00 AM</td>
+                  <td>Ronda final – Categoría +45</td>
+                </tr>
+
+                <tr>
+                  <td>11:30 AM</td>
+                  <td>Ronda final – Categoría PRO</td>
+                </tr>
+
+                <tr>
+                  <td>12:00 PM</td>
+                  <td>Premiación y clausura</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <h4>
+            CONSIDERACIONES
+          </h4>
+
+          <ul>
+            <li>
+              Los atletas deberán presentarse con anticipación
+              al horario asignado para su categoría.
+            </li>
+
+            <li>
+              El cronograma podrá sufrir modificaciones por
+              razones logísticas, de seguridad o fuerza mayor.
+            </li>
+
+            <li>
+              Los atletas deberán permanecer atentos a las
+              indicaciones del equipo organizador y jueces oficiales.
+            </li>
+
+            <li>
+              Los horarios de inicio corresponden al comienzo
+              programado de cada ronda.
+            </li>
+          </ul>
+
+        </article>
+
+
+      </div>
+
+
+
+      <!-- ==========================================
+           ACEPTACIÓN FINAL
+      =========================================== -->
+
+      <div class="reglamento-signature">
+
+        <h3>
+          ¿LISTO PARA COMPETIR?
+        </h3>
+
+        <p>
+          Descarga el reglamento oficial, léelo cuidadosamente,
+          fírmalo y completa tu inscripción para
+          MOVE HYBRID GAMES 2026.
+        </p>
+
+      </div>
+
+
+    </section>
 
   </main>
 
@@ -381,8 +2083,13 @@
   <footer>
 
     <div class="footer-brand">
+
       MOVE
-      <span>HYBRID GAMES</span>
+
+      <span>
+        HYBRID GAMES
+      </span>
+
     </div>
 
     <p>
@@ -393,9 +2100,11 @@
   </footer>
 
 
+
   <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
+
 
 </body>
 
