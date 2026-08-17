@@ -689,18 +689,14 @@ if (registrationForm) {
                    FUE EXITOSO.
                 */
 
-                if (
-                    response.ok &&
-                    result.success
-                ) {
+               if (response.ok) {
 
                     /*
                        Mensaje de éxito.
                     */
 
                     registrationMessage.textContent =
-                        "¡INSCRIPCIÓN ENVIADA CORRECTAMENTE! Recibimos tus datos. Nos pondremos en contacto contigo si necesitamos información adicional.";
-
+    "✓ INSCRIPCIÓN ENVIADA CORRECTAMENTE. Hemos recibido tus datos y tu registro fue procesado con éxito.";
 
                     registrationMessage.classList.add(
                         "active"
