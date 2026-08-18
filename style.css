@@ -4754,3 +4754,22 @@ footer {
         margin-top: 112px;
     }
 }
+
+/* ==========================================
+   LOGO PRINCIPAL DEL HERO
+========================================== */
+
+.hero-logo {
+  width: min(760px, 52vw);
+  margin: 20px auto 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
