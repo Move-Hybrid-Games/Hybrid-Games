@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#070912"
+  >
+
+  <meta
+    name="description"
+    content="WOD Oficial — MOVE HYBRID GAMES"
+  >
+
+  <title>WOD OFICIAL | MOVE HYBRID GAMES</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS PRINCIPAL -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ESTILOS EXCLUSIVOS DE WOD -->
+  <style>
+
+    /* ==========================================
+       WOD PAGE
+    ========================================== */
+
+    .wod-page {
+      min-height: 100vh;
+      padding: 150px 6% 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    /* ==========================================
+       ENCABEZADO
+    ========================================== */
+
+    .wod-header {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+
+    .wod-kicker {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #00e5ff;
+      margin-bottom: 18px;
+    }
+
+
+    .wod-header h1 {
+      margin: 0;
+
+      font-size: clamp(42px, 7vw, 82px);
+
+      font-weight: 900;
+      line-height: 0.95;
+
+      letter-spacing: -3px;
+
+      color: #ffffff;
+    }
+
+
+    .wod-header h1 span {
+      color: #00e5ff;
+    }
+
+
+    .wod-header p {
+      margin: 25px auto 0;
+
+      max-width: 650px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* ==========================================
+       CONTENEDOR DE WODS
+    ========================================== */
+
+    .wods-container {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 35px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* ==========================================
+       TARJETA WOD
+    ========================================== */
+
+    .wod-card {
+      position: relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.025)
+        );
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      border-radius: 18px;
+
+      padding: 18px;
+
+      overflow: hidden;
+
+      backdrop-filter: blur(10px);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .wod-card:hover {
+      transform: translateY(-8px);
+
+      border-color: rgba(0,229,255,0.5);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.4),
+        0 0 30px rgba(0,229,255,0.08);
+    }
+
+
+    /* ==========================================
+       IMAGEN
+    ========================================== */
+
+    .wod-image {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      overflow: hidden;
+
+      border-radius: 12px;
+
+      background: #11131d;
+    }
+
+
+    .wod-image img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+
+    .wod-card:hover .wod-image img {
+      transform: scale(1.03);
+    }
+
+
+    /* ==========================================
+       INFORMACIÓN
+    ========================================== */
+
+    .wod-info {
+      padding: 25px 8px 10px;
+    }
+
+
+    .wod-number {
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      color: #00e5ff;
+
+      margin-bottom: 8px;
+    }
+
+
+    .wod-info h2 {
+      margin: 0;
+
+      font-size: 28px;
+
+      font-weight: 900;
+
+      letter-spacing: -1px;
+
+      color: #ffffff;
+    }
+
+
+    .wod-info p {
+      margin: 10px 0 0;
+
+      color: rgba(255,255,255,0.55);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+
+    .wod-footer {
+      text-align: center;
+
+      margin-top: 80px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .wod-footer a {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding: 0 28px;
+
+      border: 1px solid rgba(0,229,255,0.5);
+
+      border-radius: 4px;
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      transition: all 0.3s ease;
+    }
+
+
+    .wod-footer a:hover {
+      background: #00e5ff;
+
+      color: #070912;
+
+      border-color: #00e5ff;
+    }
+
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 800px) {
+
+      .wod-page {
+        padding: 130px 20px 70px;
+      }
+
+
+      .wod-header {
+        margin-bottom: 45px;
+      }
+
+
+      .wod-header h1 {
+        letter-spacing: -2px;
+      }
+
+
+      .wods-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+      }
+
+
+      .wod-image {
+        aspect-ratio: 4 / 5;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       EFECTOS DE LUZ
+  =========================================== -->
+
+  <div class="page-glow page-glow--one"></div>
+
+  <div class="page-glow page-glow--two"></div>
+
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+  =========================================== -->
+
+  <header class="site-header">
+
+    <div class="nav-shell">
+
+
+      <!-- LOGO -->
+
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="MOVE HYBRID GAMES"
+      >
+
+        <img
+          src="logo.png"
+          alt="MOVE Hybrid Games"
+          class="brand-logo"
+        >
+
+        <span class="brand-name">
+
+          <b>MOVE</b>
+
+          <small>HYBRID GAMES</small>
+
+        </span>
+
+      </a>
+
+
+      <!-- BOTÓN MOBILE -->
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </button>
+
+
+      <!-- NAVBAR -->
+
+      <nav
+        class="main-nav"
+        aria-label="Navegación principal"
+      >
+
+        <a
+          class="nav-link"
+          href="index.html"
+        >
+          INICIO
+        </a>
+
+
+        <a
+          class="nav-link"
+          href="reglamento.html"
+        >
+          REGLAMENTO
+        </a>
+
+
+        <a
+          href="https://goo.gl/maps/wiTaCZ3G5cs1sKGv7"
+          class="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          UBICACIÓN DEL EVENTO
+        </a>
+
+
+        <a
+          class="nav-link active"
+          href="wod.html"
+        >
+          WOD OFICIAL
+        </a>
+
+      </nav>
+
+
+      <!-- PERFIL -->
+
+      <a
+        class="profile-button"
+        href="index.html#atletas"
+        aria-label="Perfil"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <circle
+            cx="12"
+            cy="8"
+            r="4"
+          ></circle>
+
+
+          <path
+            d="M4.5 21c.7-4.1 3.2-6 7.5-6s6.8 1.9 7.5 6"
+          ></path>
+
+        </svg>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==========================================
+       CONTENIDO WOD
+  =========================================== -->
+
+  <main>
+
+    <section class="wod-page">
+
+
+      <!-- TITULO -->
+
+      <div class="wod-header">
+
+        <span class="wod-kicker">
+          MOVE HYBRID GAMES
+        </span>
+
+
+        <h1>
+          WOD <span>OFICIAL</span>
+        </h1>
+
+
+        <p>
+          Conoce los workouts oficiales de MOVE HYBRID GAMES
+          y prepárate para llevar tu rendimiento al límite.
+        </p>
+
+      </div>
+
+
+      <!-- ======================================
+           DOS WODS
+      ======================================= -->
+
+      <div class="wods-container">
+
+
+        <!-- ====================================
+             WOD 01
+        ===================================== -->
+
+        <article class="wod-card">
+
+          <div class="wod-image">
+
+            <img
+              src="wod1.jpg"
+              alt="WOD Oficial 01"
+            >
+
+          </div>
+
+
+          <div class="wod-info">
+
+            <div class="wod-number">
+              WOD 01
+            </div>
+
+
+            <h2>
+              WOD OFICIAL
+            </h2>
+
+
+            <p>
+              Workout oficial de la competencia.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- ====================================
+             WOD 02
+        ===================================== -->
+
+        <article class="wod-card">
+
+          <div class="wod-image">
+
+            <img
+              src="wod2.jpg"
+              alt="WOD Oficial 02"
+            >
+
+          </div>
+
+
+          <div class="wod-info">
+
+            <div class="wod-number">
+              WOD 02
+            </div>
+
+
+            <h2>
+              WOD OFICIAL
+            </h2>
+
+
+            <p>
+              Segundo workout oficial de la competencia.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- VOLVER -->
+
+      <div class="wod-footer">
+
+        <a href="index.html">
+          ← VOLVER AL INICIO
+        </a>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       JAVASCRIPT
+  =========================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
